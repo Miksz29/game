@@ -1,0 +1,47 @@
+[gd_scene format=3 uid="uid://bs4px5mfnxd2b"]
+
+[ext_resource type="Script" uid="uid://cji6bcpoy8q4d" path="res://scenes/nurse.gd" id="1_6kp3p"]
+[ext_resource type="Texture2D" uid="uid://jb77rpyjltre" path="res://assets/images/player/Player/d60e19z-afda7b9c-ca72-46f0-ab5d-0ffad49be130.png" id="1_wtown"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6kp3p"]
+atlas = ExtResource("1_wtown")
+region = Rect2(0, 72, 68, 72)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7x1u7"]
+atlas = ExtResource("1_wtown")
+region = Rect2(136, 72, 68, 72)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6d722"]
+animations = [{
+"frames": [],
+"loop": 1,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6kp3p")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7x1u7")
+}],
+"loop": 1,
+"name": &"idle_nurse",
+"speed": 2.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d722"]
+size = Vector2(15, 40)
+
+[node name="nurse" type="CharacterBody2D" unique_id=1113068135]
+collision_mask = 0
+script = ExtResource("1_6kp3p")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1168528317]
+sprite_frames = SubResource("SpriteFrames_6d722")
+animation = &"idle_nurse"
+frame_progress = 0.07673429
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=995581062]
+position = Vector2(-1.5, 3)
+shape = SubResource("RectangleShape2D_6d722")

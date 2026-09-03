@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://bn5lhq6m1txhc"]
+
+[ext_resource type="PackedScene" uid="uid://dkj03mgioy63u" path="res://scenes/levels/base_level.tscn" id="1_j2425"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d722"]
+size = Vector2(231, 149.5)
+
+[node name="LevelRoot" unique_id=1260303348 instance=ExtResource("1_j2425")]
+
+[node name="TileMapLayer" parent="." index="0" unique_id=317153713]
+position = Vector2(8, 250)
+
+[node name="Player" parent="." index="1" unique_id=46643244]
+position = Vector2(510, 669)
+
+[node name="Exit" parent="." index="2" unique_id=933412342]
+position = Vector2(312, 508)
+
+[node name="Exit_back" type="Area2D" parent="." index="3" unique_id=1120389445]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_back" index="0" unique_id=935968339]
+position = Vector2(316, 675)
+shape = SubResource("RectangleShape2D_6d722")
