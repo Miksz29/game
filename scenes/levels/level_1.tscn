@@ -8354,6 +8354,15 @@ sources/3 = SubResource("TileSetAtlasSource_gmpev")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ksju7"]
 size = Vector2(244, 767)
 
+[sub_resource type="Gradient" id="Gradient_excbq"]
+offsets = PackedFloat32Array(0, 0.6566265, 0.9879518, 1)
+colors = PackedColorArray(0.8, 0.8, 0.8, 1, 0, 0, 0, 1, 0.048854947, 0.048854947, 0.048854947, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_bhunq"]
+gradient = SubResource("Gradient_excbq")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="LevelRoot" unique_id=1260303348 instance=ExtResource("1_ksju7")]
 
 [node name="TileMapLayer" parent="." index="0" unique_id=317153713]
@@ -8397,3 +8406,13 @@ position = Vector2(1823, 392)
 [node name="CollisionShape2D" parent="Exit" index="0" unique_id=484910983]
 position = Vector2(0, 256.5)
 shape = SubResource("RectangleShape2D_ksju7")
+
+[node name="PointLight2D" type="PointLight2D" parent="." index="9" unique_id=2143785924]
+position = Vector2(803.44916, 682)
+scale = Vector2(27.017212, 23.709106)
+color = Color(0.96862745, 0.80784315, 0.7176471, 1)
+energy = 0.85
+texture = SubResource("GradientTexture2D_bhunq")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." index="10" unique_id=1081839324]
+color = Color(0.4817897, 0.4817894, 0.48178947, 1)
