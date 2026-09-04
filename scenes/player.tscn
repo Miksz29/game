@@ -340,6 +340,6 @@ shape = SubResource("RectangleShape2D_jbofv")
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1657252825]
 limit_left = 0
 limit_top = -100
-limit_right = 1536
-limit_bottom = 768
+limit_right = 2600
+limit_bottom = 890
 rotation_smoothing_enabled = true
