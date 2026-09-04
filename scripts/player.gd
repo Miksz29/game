@@ -8,11 +8,6 @@ var last_direction: Vector2 = Vector2.RIGHT
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
  
 func _physics_process(_delta: float) -> void:
-	# ADDED: safety net. A Pausable node's _physics_process shouldn't even fire
-	# while get_tree().paused is true — so if the Player can still move during
-	# dialogue, double check the Player node's "Process Mode" in the Inspector
-	# is set to "Inherit" (default), not "Always". This line stops movement
-	# regardless, even if that setting is wrong.
 	if get_tree().paused:
 		velocity = Vector2.ZERO
 		return
@@ -51,3 +46,7 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 func player():
 	pass
  
+
+
+func _on_exit_body_entered(_body: Node2D) -> void:
+	pass

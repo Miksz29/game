@@ -6,7 +6,6 @@ var last_transition: String = "forward"
 
 
 func _ready() -> void:
-	current_level_root = get_node("LevelRoot")
 	_load_level(level, "forward")
 	
 func _load_level(level_number: int, transition_type: String) -> void:
@@ -19,7 +18,7 @@ func _load_level(level_number: int, transition_type: String) -> void:
 	current_level_root.name = "LevelRoot"
 	
 	
-	var player = current_level_root.get_node_or_null("Player")
+	var player = current_level_root.get_node("Player")
 	if player:
 		var spawn_name = "SpawnFromLeft" if transition_type == "forward" else "SpawnFromRight"
 		var spawn_node = current_level_root.get_node_or_null(spawn_name)
