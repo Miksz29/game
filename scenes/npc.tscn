@@ -1,6 +1,6 @@
 [gd_scene format=3 uid="uid://cltvcl34ht6vt"]
 
-[ext_resource type="Script" uid="uid://dsjqbydtmu8bo" path="res://npc.gd" id="1_abqhh"]
+[ext_resource type="Script" uid="uid://pog84e58l2in" path="res://scripts/npc.gd" id="1_rv78h"]
 [ext_resource type="Texture2D" uid="uid://dbc213s158gct" path="res://assets/images/player/Player/TownsPeople2_Animations.png" id="2_rv78h"]
 [ext_resource type="PackedScene" uid="uid://blu1jvwrosmqx" path="res://dialouges/dialouge.tscn" id="3_rv78h"]
 
@@ -131,7 +131,7 @@ radius = 9.513149
 
 [node name="CharacterBody2D" type="CharacterBody2D" unique_id=625390128]
 scale = Vector2(2, 2)
-script = ExtResource("1_abqhh")
+script = ExtResource("1_rv78h")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1198954952]
 position = Vector2(0, -1)

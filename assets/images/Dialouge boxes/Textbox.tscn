@@ -1,0 +1,24 @@
+[gd_scene format=3 uid="uid://dim11wfq4r3iq"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_mg7dd"]
+bg_color = Color(0, 0, 0, 1)
+border_width_left = 4
+border_width_top = 4
+border_width_right = 4
+border_width_bottom = 4
+border_color = Color(1, 1, 1, 1)
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=745776694]
+
+[node name="MarginContainer" type="MarginContainer" parent="." unique_id=1014585287]
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -201.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="Panel" type="Panel" parent="MarginContainer" unique_id=1670044079]
+layout_mode = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_mg7dd")

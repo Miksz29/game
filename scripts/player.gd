@@ -1,18 +1,26 @@
 extends CharacterBody2D
-
-
+ 
+ 
 const SPEED = 300.0
-
+ 
 var last_direction: Vector2 = Vector2.RIGHT
-
+ 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-
+ 
 func _physics_process(_delta: float) -> void:
+	# ADDED: safety net. A Pausable node's _physics_process shouldn't even fire
+	# while get_tree().paused is true — so if the Player can still move during
+	# dialogue, double check the Player node's "Process Mode" in the Inspector
+	# is set to "Inherit" (default), not "Always". This line stops movement
+	# regardless, even if that setting is wrong.
+	if get_tree().paused:
+		velocity = Vector2.ZERO
+		return
 	process_movement()
 	process_animation()
 	move_and_slide()
 	
-
+ 
 #movement and animation
 func process_movement() -> void:
 	# Get the input direction and handle the movement/deceleration.
@@ -24,13 +32,13 @@ func process_movement() -> void:
 		last_direction = direction
 	else:
 		velocity = Vector2.ZERO
-
+ 
 func process_animation() ->  void:
 	if velocity != Vector2.ZERO:
 		play_animation("run", last_direction)
 	else:
 		play_animation("idle", last_direction)
-
+ 
 func play_animation(prefix: String, dir: Vector2) -> void:
 	if dir.x != 0:
 		animated_sprite_2d.flip_h = dir.x < 0
@@ -39,3 +47,7 @@ func play_animation(prefix: String, dir: Vector2) -> void:
 		animated_sprite_2d.play(prefix +"_up")
 	elif dir.y > 0:
 		animated_sprite_2d.play(prefix +"_down")	
+ 
+func player():
+	pass
+ 
