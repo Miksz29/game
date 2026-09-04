@@ -30,10 +30,14 @@ animations = [{
 "speed": 2.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6d722"]
-size = Vector2(15, 40)
+[sub_resource type="CircleShape2D" id="CircleShape2D_6d722"]
+radius = 13.017083
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_jbofv"]
+radius = 24.999998
 
 [node name="nurse" type="CharacterBody2D" unique_id=1113068135]
+scale = Vector2(0.6, 0.6)
 collision_mask = 0
 script = ExtResource("1_6kp3p")
 
@@ -43,5 +47,15 @@ animation = &"idle_nurse"
 frame_progress = 0.07673429
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=995581062]
-position = Vector2(-1.5, 3)
-shape = SubResource("RectangleShape2D_6d722")
+position = Vector2(-1.6666665, 8.333333)
+rotation = 0.7853982
+shape = SubResource("CircleShape2D_6d722")
+
+[node name="chat_detection_area" type="Area2D" parent="." unique_id=1665407316]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="chat_detection_area" unique_id=539910634]
+position = Vector2(-1.6666666, 1.6666666)
+shape = SubResource("CircleShape2D_jbofv")
+
+[node name="Timer" type="Timer" parent="." unique_id=580607197]
+autostart = true

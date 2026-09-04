@@ -1,0 +1,43 @@
+[gd_scene format=3 uid="uid://blu1jvwrosmqx"]
+
+[ext_resource type="Script" uid="uid://bq74hgxeghg85" path="res://dialouges/dialougeplayer.gd" id="1_skhb7"]
+[ext_resource type="Texture2D" uid="uid://dwwwhjjwxuj12" path="res://assets/images/Dialouge boxes/Simple & Clean.PNG" id="2_skhb7"]
+
+[node name="Dialouge" type="Control" unique_id=2115651826]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -1.0
+offset_right = 2.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_skhb7")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1161498009]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 27.0
+offset_right = 195.0
+offset_bottom = 104.0
+texture = ExtResource("2_skhb7")
+
+[node name="Name" type="RichTextLabel" parent="NinePatchRect" unique_id=2001400809]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 34.0
+offset_right = 80.33333
+offset_bottom = 57.333313
+scale = Vector2(0.3, 0.3)
+text = "NAME:"
+
+[node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=222685130]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 44.0
+offset_right = 134.0
+offset_bottom = 84.0
+scale = Vector2(0.3, 0.3)
+text = "Chatting..."
