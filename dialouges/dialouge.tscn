@@ -23,7 +23,7 @@ script = ExtResource("1_skhb7")
 layout_mode = 0
 offset_left = 19.0
 offset_top = 35.0
-offset_right = 197.0
+offset_right = 196.0
 offset_bottom = 113.0
 texture = ExtResource("2_skhb7")
 

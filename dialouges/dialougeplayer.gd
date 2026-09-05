@@ -4,15 +4,14 @@ signal dialouge_finished
 var dialouge = []
 var current_dialogue_id = 0
 var d_active = false
-# ADDED: needed to animate the text letter-by-letter
+
 var text_tween: Tween
-# ADDED: prevents the same keypress that opened the dialogue (or key-repeat
-# while it's held) from also instantly skipping the first line's animation
+
 var waiting_for_release = false
  
 func _ready():
 	$NinePatchRect.visible = false
-	# ADDED: keeps this dialogue box working even while the game is paused below
+
 	process_mode = Node.PROCESS_MODE_ALWAYS
  
 func start():
@@ -20,32 +19,31 @@ func start():
 		return
 	d_active = true
 	$NinePatchRect.visible = true
-	# ADDED: freezes the player/NPCs/environment while talking
+
 	get_tree().paused = true
 	dialouge = load_dialouge()
 	current_dialogue_id = -1
 	next_script()
-	# ADDED: if the interact key is still being held down when this starts,
-	# don't let it also count as a "skip" press until it's released once
+	
 	if Input.is_action_pressed("ui_accept"):
 		waiting_for_release = true
  
 func load_dialouge():
-	var file = FileAccess.open("res://dialouges/worker_dialouge.json", FileAccess.READ)
+	var file = FileAccess.open(d_file, FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
 	return content
  
 func _input(event):
 	if !d_active:
 		return
-	# ADDED: swallow ui_accept until the opening key is actually released
+
 	if waiting_for_release:
 		if event.is_action_released("ui_accept"):
 			waiting_for_release = false
 		return
-	# ADDED: "not event.is_echo()" ignores OS key-repeat from a held key
+	
 	if event.is_action_pressed("ui_accept") and not event.is_echo():
-		# ADDED: if text is still typing out, first press just instantly finishes it
+
 		if text_tween and text_tween.is_running():
 			text_tween.kill()
 			$NinePatchRect/Text.visible_characters = -1
@@ -57,7 +55,7 @@ func next_script():
 	if current_dialogue_id >= len(dialouge):
 		d_active = false
 		$NinePatchRect.visible = false
-		# ADDED: unfreeze the game once dialogue ends
+
 		get_tree().paused = false
 		emit_signal("dialouge_finished")
 		return
@@ -71,6 +69,6 @@ func next_script():
 		text_tween.kill()
 	text_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	var text_length = $NinePatchRect/Text.text.length()
-	var duration = text_length * 0.03 # typing speed - raise/lower this number to adjust
+	var duration = text_length * 0.03
 	text_tween.tween_property($NinePatchRect/Text, "visible_characters", text_length, duration)
  

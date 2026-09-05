@@ -152,6 +152,7 @@ shape = SubResource("CircleShape2D_mg7dd")
 autostart = true
 
 [node name="Dialouge" parent="." unique_id=2115651826 instance=ExtResource("3_rv78h")]
+d_file = "res://dialouges/worker_dialouge.json"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="body_exited" from="Area2D" to="." method="_on_area_2d_body_exited"]

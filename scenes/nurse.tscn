@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://bs4px5mfnxd2b"]
 
-[ext_resource type="Script" uid="uid://cji6bcpoy8q4d" path="res://scenes/nurse.gd" id="1_6kp3p"]
+[ext_resource type="Script" uid="uid://cji6bcpoy8q4d" path="res://scripts/nurse.gd" id="1_6kp3p"]
 [ext_resource type="Texture2D" uid="uid://jb77rpyjltre" path="res://assets/images/player/Player/d60e19z-afda7b9c-ca72-46f0-ab5d-0ffad49be130.png" id="1_wtown"]
+[ext_resource type="PackedScene" uid="uid://blu1jvwrosmqx" path="res://dialouges/dialouge.tscn" id="3_7x1u7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6kp3p"]
 atlas = ExtResource("1_wtown")
@@ -57,5 +58,32 @@ shape = SubResource("CircleShape2D_6d722")
 position = Vector2(-1.6666666, 1.6666666)
 shape = SubResource("CircleShape2D_jbofv")
 
-[node name="Timer" type="Timer" parent="." unique_id=580607197]
-autostart = true
+[node name="Dialouge" parent="." unique_id=2115651826 instance=ExtResource("3_7x1u7")]
+anchors_preset = -1
+d_file = "res://dialouges/nurse_dialouge.json"
+
+[node name="NinePatchRect" parent="Dialouge" index="0" unique_id=1161498009]
+offset_left = -209.0
+offset_top = 40.333313
+offset_right = 237.66666
+offset_bottom = 235.33331
+
+[node name="Name" parent="Dialouge/NinePatchRect" index="0" unique_id=2001400809]
+offset_left = 41.666626
+offset_top = 86.66666
+offset_right = 563.88885
+offset_bottom = 136.6665
+theme_override_font_sizes/normal_font_size = 61
+
+[node name="Text" parent="Dialouge/NinePatchRect" index="1" unique_id=222685130]
+offset_left = 41.666626
+offset_top = 108.33333
+offset_right = 1241.6666
+offset_bottom = 391.66675
+theme_override_font_sizes/normal_font_size = 63
+
+[connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
+[connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
+[connection signal="dialouge_finished" from="Dialouge" to="." method="_on_dialouge_dialouge_finished"]
+
+[editable path="Dialouge"]
