@@ -11,42 +11,50 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -1.0
-offset_top = -2.0
-offset_right = -1.0
-offset_bottom = -2.0
+offset_left = -205.0
+offset_top = -94.0
+offset_right = -205.0
+offset_bottom = -94.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_skhb7")
 
-[node name="NinePatchRect" type="NinePatchRect" parent="." unique_id=1161498009]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 35.0
-offset_right = 196.0
-offset_bottom = 113.0
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=2002920023]
+
+[node name="NinePatchRect" type="NinePatchRect" parent="CanvasLayer" unique_id=1161498009]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -293.0
+offset_top = -290.0
+offset_right = 292.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 0
 texture = ExtResource("2_skhb7")
 
-[node name="Name" type="RichTextLabel" parent="NinePatchRect" unique_id=2001400809]
+[node name="Name" type="RichTextLabel" parent="CanvasLayer/NinePatchRect" unique_id=2001400809]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 34.0
-offset_right = 224.66666
-offset_bottom = 57.333313
+offset_left = 53.0
+offset_top = 129.0
+offset_right = 819.6666
+offset_bottom = 262.33337
 scale = Vector2(0.3, 0.3)
 theme_override_fonts/normal_font = ExtResource("3_8n82y")
-theme_override_font_sizes/normal_font_size = 27
+theme_override_font_sizes/normal_font_size = 90
 text = "NAME:"
 
-[node name="Text" type="RichTextLabel" parent="NinePatchRect" unique_id=222685130]
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/NinePatchRect" unique_id=222685130]
 layout_mode = 0
-offset_left = 18.0
-offset_top = 41.0
-offset_right = 498.0
-offset_bottom = 157.66669
+offset_left = 52.0
+offset_top = 157.0
+offset_right = 1608.6667
+offset_bottom = 583.6666
 scale = Vector2(0.3, 0.3)
 theme_override_fonts/normal_font = ExtResource("3_8n82y")
-theme_override_font_sizes/normal_font_size = 22
+theme_override_font_sizes/normal_font_size = 86
 bbcode_enabled = true
 text = "Chatting..."
 custom_effects = [SubResource("RichTextEffect_rv78h")]

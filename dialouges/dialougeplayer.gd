@@ -10,7 +10,7 @@ var text_tween: Tween
 var waiting_for_release = false
  
 func _ready():
-	$NinePatchRect.visible = false
+	$CanvasLayer/NinePatchRect.visible = false
 
 	process_mode = Node.PROCESS_MODE_ALWAYS
  
@@ -18,7 +18,7 @@ func start():
 	if d_active:
 		return
 	d_active = true
-	$NinePatchRect.visible = true
+	$CanvasLayer/NinePatchRect.visible = true
 
 	get_tree().paused = true
 	dialouge = load_dialouge()
@@ -46,7 +46,7 @@ func _input(event):
 
 		if text_tween and text_tween.is_running():
 			text_tween.kill()
-			$NinePatchRect/Text.visible_characters = -1
+			$CanvasLayer/NinePatchRect/Text.visible_characters = -1
 		else:
 			next_script()
  
@@ -54,21 +54,21 @@ func next_script():
 	current_dialogue_id += 1
 	if current_dialogue_id >= len(dialouge):
 		d_active = false
-		$NinePatchRect.visible = false
+		$CanvasLayer/NinePatchRect.visible = false
 
 		get_tree().paused = false
 		emit_signal("dialouge_finished")
 		return
 	
-	$NinePatchRect/Name.text = dialouge[current_dialogue_id]['name']
-	$NinePatchRect/Text.text = dialouge[current_dialogue_id]['text']
+	$CanvasLayer/NinePatchRect/Name.text = dialouge[current_dialogue_id]['name']
+	$CanvasLayer/NinePatchRect/Text.text = dialouge[current_dialogue_id]['text']
 	
 	# ADDED: everything below is the typewriter animation
-	$NinePatchRect/Text.visible_characters = 0
+	$CanvasLayer/NinePatchRect/Text.visible_characters = 0
 	if text_tween:
 		text_tween.kill()
 	text_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
-	var text_length = $NinePatchRect/Text.text.length()
+	var text_length = $CanvasLayer/NinePatchRect/Text.text.length()
 	var duration = text_length * 0.03
-	text_tween.tween_property($NinePatchRect/Text, "visible_characters", text_length, duration)
+	text_tween.tween_property($CanvasLayer/NinePatchRect/Text, "visible_characters", text_length, duration)
  
