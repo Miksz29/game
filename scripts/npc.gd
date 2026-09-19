@@ -79,4 +79,3 @@ func _on_timer_timeout():
 func _on_dialouge_dialouge_finished() -> void:
 	is_chatting = false
 	is_roaming = true
- 

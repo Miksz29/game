@@ -1,0 +1,125 @@
+[gd_scene format=3 uid="uid://qyopguv0a4x0"]
+
+[ext_resource type="Script" uid="uid://v6fkb8170iuh" path="res://scenes/npc_quest.gd" id="1_2fk62"]
+[ext_resource type="Texture2D" uid="uid://dwwwhjjwxuj12" path="res://assets/images/Dialouge boxes/Simple & Clean.PNG" id="1_yqrum"]
+[ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="2_2fk62"]
+
+[sub_resource type="RichTextEffect" id="RichTextEffect_rv78h"]
+
+[node name="npc_quest" type="Control" unique_id=1471069048]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2fk62")
+
+[node name="no_quest" type="NinePatchRect" parent="." unique_id=1045381029]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 35.0
+offset_right = 196.0
+offset_bottom = 113.0
+texture = ExtResource("1_yqrum")
+
+[node name="Name" type="RichTextLabel" parent="no_quest" unique_id=657466052]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 34.0
+offset_right = 224.66666
+offset_bottom = 57.333313
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_2fk62")
+theme_override_font_sizes/normal_font_size = 27
+text = "nurse"
+
+[node name="Text" type="RichTextLabel" parent="no_quest" unique_id=1063938330]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 497.0
+offset_bottom = 158.66669
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_2fk62")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "before you start your shift make sure to clock in the staff room."
+custom_effects = [SubResource("RichTextEffect_rv78h")]
+
+[node name="finished_quest" type="NinePatchRect" parent="." unique_id=1838813324]
+layout_mode = 0
+offset_left = 19.0
+offset_top = 35.0
+offset_right = 196.0
+offset_bottom = 113.0
+texture = ExtResource("1_yqrum")
+
+[node name="Name" type="RichTextLabel" parent="finished_quest" unique_id=525251882]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 34.0
+offset_right = 224.66666
+offset_bottom = 57.333313
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_2fk62")
+theme_override_font_sizes/normal_font_size = 27
+text = "nurse"
+
+[node name="Text" type="RichTextLabel" parent="finished_quest" unique_id=2134932716]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 497.0
+offset_bottom = 158.66669
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_2fk62")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "good job now head to your first room."
+custom_effects = [SubResource("RichTextEffect_rv78h")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=530115490]
+
+[node name="quest1_ui" type="NinePatchRect" parent="CanvasLayer" unique_id=963858843]
+offset_left = 19.0
+offset_top = 35.0
+offset_right = 196.0
+offset_bottom = 113.0
+texture = ExtResource("1_yqrum")
+
+[node name="Name" type="RichTextLabel" parent="CanvasLayer/quest1_ui" unique_id=744362697]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 34.0
+offset_right = 224.66666
+offset_bottom = 57.333313
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_2fk62")
+theme_override_font_sizes/normal_font_size = 27
+text = "nurse"
+
+[node name="Text" type="RichTextLabel" parent="CanvasLayer/quest1_ui" unique_id=1351641231]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 42.0
+offset_right = 497.0
+offset_bottom = 158.66669
+scale = Vector2(0.3, 0.3)
+theme_override_fonts/normal_font = ExtResource("2_2fk62")
+theme_override_font_sizes/normal_font_size = 22
+bbcode_enabled = true
+text = "before you start your shift make sure to clock in the staff room."
+custom_effects = [SubResource("RichTextEffect_rv78h")]
+
+[node name="Button" type="Button" parent="CanvasLayer/quest1_ui" unique_id=510817344]
+layout_mode = 0
+offset_left = 146.0
+offset_top = 62.0
+offset_right = 163.0
+offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("2_2fk62")
+theme_override_font_sizes/font_size = 10
+text = "v"
+
+[connection signal="pressed" from="CanvasLayer/quest1_ui/Button" to="." method="_on_button_pressed"]
