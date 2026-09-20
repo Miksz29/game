@@ -1,4 +1,4 @@
-[gd_scene format=4 uid="uid://b5cwke3m44jhr"]
+[gd_scene format=4 uid="uid://4g3qsbrme3xl"]
 
 [ext_resource type="Texture2D" uid="uid://bk7xll7pal6dm" path="res://assets/images/tileset/AO ONI 3.png" id="1_3kf05"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="1_nk8s7"]
