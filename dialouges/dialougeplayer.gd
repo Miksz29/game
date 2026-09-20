@@ -8,12 +8,11 @@ var d_active = false
 var text_tween: Tween
 
 var waiting_for_release = false
- 
+
 func _ready():
 	$CanvasLayer/NinePatchRect.visible = false
-
 	process_mode = Node.PROCESS_MODE_ALWAYS
- 
+
 func start():
 	if d_active:
 		return
@@ -27,12 +26,12 @@ func start():
 	
 	if Input.is_action_pressed("ui_accept"):
 		waiting_for_release = true
- 
+
 func load_dialouge():
 	var file = FileAccess.open(d_file, FileAccess.READ)
 	var content = JSON.parse_string(file.get_as_text())
 	return content
- 
+
 func _input(event):
 	if !d_active:
 		return
@@ -43,13 +42,13 @@ func _input(event):
 		return
 	
 	if event.is_action_pressed("ui_accept") and not event.is_echo():
-
 		if text_tween and text_tween.is_running():
 			text_tween.kill()
 			$CanvasLayer/NinePatchRect/Text.visible_characters = -1
+			$StartSound.stop()  # ADDED: cut the sound when skipping the typing
 		else:
 			next_script()
- 
+
 func next_script():
 	current_dialogue_id += 1
 	if current_dialogue_id >= len(dialouge):
@@ -62,8 +61,9 @@ func next_script():
 	
 	$CanvasLayer/NinePatchRect/Name.text = dialouge[current_dialogue_id]['name']
 	$CanvasLayer/NinePatchRect/Text.text = dialouge[current_dialogue_id]['text']
+	$StartSound.play()  # ADDED: plays with every line
 	
-	# ADDED: everything below is the typewriter animation
+	# typewriter animation
 	$CanvasLayer/NinePatchRect/Text.visible_characters = 0
 	if text_tween:
 		text_tween.kill()
@@ -71,4 +71,3 @@ func next_script():
 	var text_length = $CanvasLayer/NinePatchRect/Text.text.length()
 	var duration = text_length * 0.03
 	text_tween.tween_property($CanvasLayer/NinePatchRect/Text, "visible_characters", text_length, duration)
- 

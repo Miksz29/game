@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bq74hgxeghg85" path="res://dialouges/dialougeplayer.gd" id="1_skhb7"]
 [ext_resource type="Texture2D" uid="uid://dwwwhjjwxuj12" path="res://assets/images/Dialouge boxes/Simple & Clean.PNG" id="2_skhb7"]
 [ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="3_8n82y"]
+[ext_resource type="AudioStream" uid="uid://bodj8mg7jfil1" path="res://assets/Music/Dialogue/dialogue.wav" id="4_wpdgt"]
 
 [sub_resource type="RichTextEffect" id="RichTextEffect_rv78h"]
 
@@ -58,3 +59,6 @@ theme_override_font_sizes/normal_font_size = 86
 bbcode_enabled = true
 text = "Chatting..."
 custom_effects = [SubResource("RichTextEffect_rv78h")]
+
+[node name="StartSound" type="AudioStreamPlayer" parent="." unique_id=644173796]
+stream = ExtResource("4_wpdgt")
