@@ -22,4 +22,4 @@ func _on_exit_pressed() -> void:
 func _on_fade_timer_timeout() -> void:
 	if button_type == "start":
 		get_tree().create_timer(1.0).timeout.connect(Bgm.play)
-		get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+		get_tree().change_scene_to_file("res://scenes/main.tscn")
