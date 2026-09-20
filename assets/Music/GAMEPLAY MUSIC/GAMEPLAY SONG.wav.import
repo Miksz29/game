@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://ctobq26s18mx5"
+path="res://.godot/imported/GAMEPLAY SONG.wav-9de41294a11adb8790926fdf5f58d7fb.sample"
+
+[deps]
+
+source_file="res://assets/Music/GAMEPLAY MUSIC/GAMEPLAY SONG.wav"
+dest_files=["res://.godot/imported/GAMEPLAY SONG.wav-9de41294a11adb8790926fdf5f58d7fb.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=2

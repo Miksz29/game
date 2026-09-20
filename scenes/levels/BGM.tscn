@@ -1,0 +1,9 @@
+[gd_scene format=3 uid="uid://bha0aefgwmrw"]
+
+[ext_resource type="AudioStream" uid="uid://ctobq26s18mx5" path="res://assets/Music/GAMEPLAY MUSIC/GAMEPLAY SONG.wav" id="1_0mojd"]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" unique_id=821278642]
+process_mode = 3
+stream = ExtResource("1_0mojd")
+volume_db = -10.0
+autoplay = true
