@@ -63,13 +63,10 @@ shape = SubResource("CircleShape2D_jbofv")
 
 [node name="Dialouge" parent="." unique_id=2115651826 instance=ExtResource("3_7x1u7")]
 anchors_preset = -1
-d_file = "res://dialouges/nurse_dialouge.json"
+d_file = "res://dialouges/nurse_level1_dialouge.json"
 
 [node name="NinePatchRect" parent="Dialouge/CanvasLayer" parent_id_path=PackedInt32Array(2115651826, 2002920023) index="0" unique_id=1161498009]
-offset_left = -293.0
-offset_top = -290.0
 offset_right = 292.5
-offset_bottom = -1.0
 
 [node name="Name" parent="Dialouge/CanvasLayer/NinePatchRect" index="0" unique_id=2001400809]
 offset_left = 55.0
