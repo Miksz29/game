@@ -13,8 +13,8 @@
 script = ExtResource("1_fsby3")
 
 [node name="MenuDesign" type="Sprite2D" parent="." unique_id=1638137892]
-position = Vector2(480.625, 271.0396)
-scale = Vector2(0.95675004, 0.9641444)
+position = Vector2(485.99994, 271)
+scale = Vector2(0.9739999, 0.9857142)
 texture = ExtResource("2_sn5u3")
 
 [node name="Button_Manager" type="Control" parent="." unique_id=1378199642]
