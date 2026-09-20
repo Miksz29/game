@@ -19,6 +19,7 @@ config/icon="res://icon.svg"
 
 QuestManager="*uid://5526gjaxp5tj"
 Bgm="*uid://bha0aefgwmrw"
+SaveManager="*uid://dcab4mmc15jr0"
 
 [display]
 

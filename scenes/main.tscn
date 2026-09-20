@@ -13,6 +13,7 @@ var last_transition: String = \"forward\"
 
 
 func _ready() -> void:
+	level = SaveManager.start_level
 	current_level_root = get_node(\"LevelRoot\")
 	_load_level(level, \"forward\")
 	
@@ -24,7 +25,7 @@ func _load_level(level_number: int, transition_type: String) -> void:
 	current_level_root = load(level_path).instantiate()
 	add_child(current_level_root)
 	current_level_root.name = \"LevelRoot\"
-	
+	SaveManager.save_level(level_number)
 	
 	var player = current_level_root.get_node_or_null(\"Player\")
 	if player:

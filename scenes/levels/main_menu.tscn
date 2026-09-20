@@ -6,6 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://cen0wbg4t3lw" path="res://assets/Main Menu Buttons/Start Button/START GAME_HOVER.png" id="3_721jg"]
 [ext_resource type="Texture2D" uid="uid://c07xg4uqyrjeo" path="res://assets/Main Menu Buttons/Exit Button/EXIT GAME.png" id="4_fkd6t"]
 [ext_resource type="Texture2D" uid="uid://b6hh804rq7w6" path="res://assets/Main Menu Buttons/Exit Button/EXIT GAME HOVER.png" id="5_keln3"]
+[ext_resource type="Texture2D" uid="uid://citc3tix036wy" path="res://assets/Main Menu Buttons/Continue Button/CONTINUE.png" id="5_wko7x"]
+[ext_resource type="Texture2D" uid="uid://qoeddfyvborr" path="res://assets/Main Menu Buttons/Continue Button/CONTINUE HOVER.png" id="6_pwqr4"]
 [ext_resource type="PackedScene" uid="uid://c0aurobhelvpv" path="res://scenes/levels/fade_transition.tscn" id="7_crctu"]
 [ext_resource type="AudioStream" uid="uid://ddwrncfwva34h" path="res://assets/Music/Main Menu Music/Main Menu Song.wav" id="8_sn5u3"]
 
@@ -25,19 +27,28 @@ offset_bottom = 40.0
 
 [node name="Start" type="TextureButton" parent="Button_Manager" unique_id=2064441997]
 layout_mode = 0
-offset_left = 324.0
-offset_top = 364.0
-offset_right = 574.0
-offset_bottom = 445.0
+offset_left = 328.0
+offset_top = 363.0
+offset_right = 578.0
+offset_bottom = 444.0
 texture_normal = ExtResource("2_leamy")
 texture_hover = ExtResource("3_721jg")
 
+[node name="Continue" type="TextureButton" parent="Button_Manager" unique_id=362528210]
+layout_mode = 0
+offset_left = 320.0
+offset_top = 417.0
+offset_right = 570.0
+offset_bottom = 498.0
+texture_normal = ExtResource("5_wko7x")
+texture_hover = ExtResource("6_pwqr4")
+
 [node name="Exit" type="TextureButton" parent="Button_Manager" unique_id=1493376048]
 layout_mode = 0
-offset_left = 325.0
-offset_top = 464.0
-offset_right = 575.0
-offset_bottom = 545.0
+offset_left = 324.0
+offset_top = 476.0
+offset_right = 574.0
+offset_bottom = 557.0
 texture_normal = ExtResource("4_fkd6t")
 texture_hover = ExtResource("5_keln3")
 
@@ -51,5 +62,6 @@ stream = ExtResource("8_sn5u3")
 autoplay = true
 
 [connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Manager/Continue" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="Button_Manager/Exit" to="." method="_on_exit_pressed"]
 [connection signal="timeout" from="fade_transition/Fade_Timer" to="." method="_on_fade_timer_timeout"]

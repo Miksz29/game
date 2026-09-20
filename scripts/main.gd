@@ -6,11 +6,13 @@ var last_transition: String = "forward"
 
 
 func _ready() -> void:
+	level = SaveManager.start_level
 	_load_level(level, "forward")
 	
 func _load_level(level_number: int, transition_type: String) -> void:
 	if current_level_root:
 		current_level_root.queue_free()
+		SaveManager.save_level(level_number)
 		
 	var level_path = "res://scenes/levels/level_%s.tscn" % level_number
 	current_level_root = load(level_path).instantiate()
