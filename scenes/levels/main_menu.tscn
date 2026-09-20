@@ -1,8 +1,8 @@
 [gd_scene format=3 uid="uid://st4cueb72uyc"]
 
 [ext_resource type="Script" uid="uid://c8us1egcuov17" path="res://main_menu.gd" id="1_fsby3"]
-[ext_resource type="Texture2D" uid="uid://bk8is5ute2qam" path="res://assets/Main Menu Buttons/MENU DESIGN.png" id="2_keln3"]
 [ext_resource type="Texture2D" uid="uid://dd55w01qt8trb" path="res://assets/Main Menu Buttons/Start Button/START GAME.png" id="2_leamy"]
+[ext_resource type="Texture2D" uid="uid://b4h8bo0q0lajx" path="res://assets/Main Menu Buttons/MAIN MENU.jpg" id="2_sn5u3"]
 [ext_resource type="Texture2D" uid="uid://cen0wbg4t3lw" path="res://assets/Main Menu Buttons/Start Button/START GAME_HOVER.png" id="3_721jg"]
 [ext_resource type="Texture2D" uid="uid://c07xg4uqyrjeo" path="res://assets/Main Menu Buttons/Exit Button/EXIT GAME.png" id="4_fkd6t"]
 [ext_resource type="Texture2D" uid="uid://b6hh804rq7w6" path="res://assets/Main Menu Buttons/Exit Button/EXIT GAME HOVER.png" id="5_keln3"]
@@ -13,9 +13,9 @@
 script = ExtResource("1_fsby3")
 
 [node name="MenuDesign" type="Sprite2D" parent="." unique_id=1638137892]
-position = Vector2(482.5, 265.5)
-scale = Vector2(0.47149998, 0.38543144)
-texture = ExtResource("2_keln3")
+position = Vector2(480.625, 271.0396)
+scale = Vector2(0.95675004, 0.9641444)
+texture = ExtResource("2_sn5u3")
 
 [node name="Button_Manager" type="Control" parent="." unique_id=1378199642]
 layout_mode = 3
@@ -25,19 +25,19 @@ offset_bottom = 40.0
 
 [node name="Start" type="TextureButton" parent="Button_Manager" unique_id=2064441997]
 layout_mode = 0
-offset_left = 544.0
-offset_top = 222.0
-offset_right = 794.0
-offset_bottom = 303.0
+offset_left = 324.0
+offset_top = 364.0
+offset_right = 574.0
+offset_bottom = 445.0
 texture_normal = ExtResource("2_leamy")
 texture_hover = ExtResource("3_721jg")
 
 [node name="Exit" type="TextureButton" parent="Button_Manager" unique_id=1493376048]
 layout_mode = 0
-offset_left = 545.0
-offset_top = 322.0
-offset_right = 795.0
-offset_bottom = 403.0
+offset_left = 325.0
+offset_top = 464.0
+offset_right = 575.0
+offset_bottom = 545.0
 texture_normal = ExtResource("4_fkd6t")
 texture_hover = ExtResource("5_keln3")
 
