@@ -1,0 +1,101 @@
+[gd_scene format=3 uid="uid://nnrywg0m6yud"]
+
+[ext_resource type="Script" uid="uid://bw5k6cm3nnafr" path="res://pause_menu.gd" id="1_myx47"]
+[ext_resource type="Shader" uid="uid://ku20blqd3412" path="res://new_shader.gdshader" id="2_kukqi"]
+[ext_resource type="Texture2D" uid="uid://cmxuow7ye1ei6" path="res://assets/PAUSE MENU BUTTONS/RESUME.png" id="3_5d2l8"]
+[ext_resource type="Texture2D" uid="uid://cxykp5a8lq67e" path="res://assets/PAUSE MENU BUTTONS/RESUME HOVER.png" id="4_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://p4xjlbo5jvrp" path="res://assets/PAUSE MENU BUTTONS/MAIN MENU.png" id="5_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://duwpq6vp2n3rv" path="res://assets/PAUSE MENU BUTTONS/MAIN MENU HOVER.png" id="6_1s2dm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_bhunq"]
+shader = ExtResource("2_kukqi")
+shader_parameter/lod = 0.0
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_bhunq"]
+
+[sub_resource type="Animation" id="Animation_5d2l8"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_7l7mv"]
+resource_name = "blur"
+length = 0.3
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:material:shader_parameter/lod")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 2),
+"points": PackedFloat32Array(0, -0.15, 0, 0.15, 0, 0.87000006, -0.050000004, -0.14500001, 0, 0),
+"times": PackedFloat32Array(0, 0.3)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_v4r4p"]
+_data = {
+&"RESET": SubResource("Animation_5d2l8"),
+&"blur": SubResource("Animation_7l7mv")
+}
+
+[node name="PauseMenu" type="Control" unique_id=1717815576]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = 3.0
+offset_right = 1.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_myx47")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1653558205]
+material = SubResource("ShaderMaterial_bhunq")
+layout_mode = 0
+offset_right = 961.0
+offset_bottom = 542.0
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=1656581107]
+custom_minimum_size = Vector2(200, 200)
+layout_mode = 0
+offset_left = 333.0
+offset_top = 109.0
+offset_right = 645.0006
+offset_bottom = 430.0
+theme_override_styles/panel = SubResource("StyleBoxEmpty_bhunq")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1390402981]
+layout_mode = 2
+theme_override_constants/separation = 55
+alignment = 1
+
+[node name="RESUME" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=719308968]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("3_5d2l8")
+texture_hover = ExtResource("4_7l7mv")
+
+[node name="MAIN MENU" type="TextureButton" parent="PanelContainer/VBoxContainer" unique_id=2076006131]
+layout_mode = 2
+size_flags_horizontal = 4
+texture_normal = ExtResource("5_v4r4p")
+texture_hover = ExtResource("6_1s2dm")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=265159072]
+libraries/ = SubResource("AnimationLibrary_v4r4p")
+
+[connection signal="pressed" from="PanelContainer/VBoxContainer/RESUME" to="." method="_on_resume_pressed"]
+[connection signal="pressed" from="PanelContainer/VBoxContainer/MAIN MENU" to="." method="_on_main_menu_pressed"]
