@@ -130,7 +130,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbofv"]
-size = Vector2(14.5, 14.5)
+size = Vector2(9.75, 9.75)
 
 [node name="Player" type="CharacterBody2D" unique_id=46643244]
 scale = Vector2(4, 4)
@@ -143,12 +143,12 @@ animation = &"run_up"
 frame_progress = 0.5081487
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=15977278]
-position = Vector2(0, -0.25)
+position = Vector2(-0.125, 0.875)
 shape = SubResource("RectangleShape2D_jbofv")
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1657252825]
-limit_left = 0
-limit_top = -100
-limit_right = 2600
-limit_bottom = 890
+limit_left = 24
+limit_top = -99
+limit_right = 2377
+limit_bottom = 6350
 rotation_smoothing_enabled = true
