@@ -53,3 +53,5 @@ autoplay = true
 [connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="Button_Manager/Exit" to="." method="_on_exit_pressed"]
 [connection signal="timeout" from="fade_transition/Fade_Timer" to="." method="_on_fade_timer_timeout"]
+[connection signal="pressed" from="Button_Manager/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="Button_Manager/Exit" to="." method="_on_exit_pressed"]
