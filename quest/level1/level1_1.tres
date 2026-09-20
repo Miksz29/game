@@ -1,0 +1,8 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://35vrnvec30v5"]
+
+[ext_resource type="Script" uid="uid://bmoprbw58totu" path="res://quest/quest.gd" id="1_4oa77"]
+
+[resource]
+script = ExtResource("1_4oa77")
+description = "Talk to the head nurse"
+metadata/_custom_type_script = "uid://bmoprbw58totu"
