@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://bj4ocvr3wuuib" path="res://assets/images/tileset/Tile_07-512x512.png" id="9_xt2o7"]
 [ext_resource type="Texture2D" uid="uid://7uwi58xy4mew" path="res://assets/images/tileset/AO ONI 2.png" id="10_beuva"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="11_05se8"]
+[ext_resource type="Texture2D" uid="uid://bxx6xtfn70ym" path="res://assets/images/light/light.png" id="12_qvnao"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4wsov"]
 texture = ExtResource("1_4wsov")
@@ -10051,3 +10052,20 @@ shape = SubResource("RectangleShape2D_rc3jm")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_back" unique_id=490908233]
 position = Vector2(-285, 29)
 shape = SubResource("RectangleShape2D_jrilj")
+
+[node name="PointLight2D2" type="PointLight2D" parent="." unique_id=917126348]
+position = Vector2(516, 172)
+scale = Vector2(1.7405598, 1.7080077)
+energy = 0.5
+texture = ExtResource("12_qvnao")
+texture_scale = 0.6
+
+[node name="PointLight2D4" type="PointLight2D" parent="." unique_id=214889570]
+position = Vector2(1030, 164)
+scale = Vector2(1.7405598, 1.7080077)
+energy = 0.5
+texture = ExtResource("12_qvnao")
+texture_scale = 0.6
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1404672101]
+color = Color(0.24115604, 0.24115604, 0.24115604, 1)
