@@ -10,9 +10,12 @@ script/source = "extends Node2D
 var level: int = 1
 var current_level_root: Node = null
 var last_transition: String = \"forward\"
+var first_load: bool = true
+var level2_played: bool = false
 
 const DIALOGUE_SCENE = preload(\"res://dialouges/dialouge.tscn\")
 const INTRO_JSON = \"res://dialouges/player_monologue_level1.json\"
+const LEVEL2_JSON = \"res://dialouges/player_monologue_level2.json\"
 
 
 func _ready() -> void:
@@ -21,6 +24,9 @@ func _ready() -> void:
 	_load_level(level, \"forward\")
 	
 func _load_level(level_number: int, transition_type: String) -> void:
+	var is_initial_load = first_load
+	first_load = false
+	
 	if current_level_root:
 		current_level_root.queue_free()
 		
@@ -39,14 +45,17 @@ func _load_level(level_number: int, transition_type: String) -> void:
 
 	_setup_level(current_level_root)
 	
-	# Play the intro monologue on a new game only
+	# Monologues
 	if level_number == 1 and SaveManager.play_intro:
-		_play_intro.call_deferred()
+		SaveManager.play_intro = false
+		_play_monologue.call_deferred(INTRO_JSON)
+	elif level_number == 2 and transition_type == \"forward\" and not is_initial_load and not level2_played:
+		level2_played = true
+		_play_monologue.call_deferred(LEVEL2_JSON)
 
-func _play_intro() -> void:
-	SaveManager.play_intro = false
+func _play_monologue(json_path: String) -> void:
 	var dialogue = DIALOGUE_SCENE.instantiate()
-	dialogue.d_file = INTRO_JSON
+	dialogue.d_file = json_path
 	add_child(dialogue)
 	dialogue.dialouge_finished.connect(dialogue.queue_free)
 	dialogue.start()
