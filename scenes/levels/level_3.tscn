@@ -4409,6 +4409,7 @@ size = Vector2(145.5, 120)
 size = Vector2(54, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbofv"]
+size = Vector2(54, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg7dd"]
 size = Vector2(60, 53.75)
@@ -4471,13 +4472,14 @@ shape = SubResource("RectangleShape2D_3kf05")
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_back" unique_id=528181698]
-position = Vector2(770, 11)
+position = Vector2(335, -200)
 shape = SubResource("RectangleShape2D_3ffft")
 
 [node name="Check_in" type="Area2D" parent="." unique_id=1631449932]
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Check_in" unique_id=429959969]
+position = Vector2(770, 11)
 shape = SubResource("RectangleShape2D_jbofv")
 
 [node name="Medicine Cabinet" type="Area2D" parent="." unique_id=1153366092]

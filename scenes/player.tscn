@@ -137,7 +137,8 @@ scale = Vector2(4, 4)
 script = ExtResource("1_g2els")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1903254886]
-scale = Vector2(0.054, 0.056)
+position = Vector2(-0.24999999, 0.24999997)
+scale = Vector2(0.050185487, 0.050177418)
 sprite_frames = SubResource("SpriteFrames_6d722")
 animation = &"idle_right"
 
