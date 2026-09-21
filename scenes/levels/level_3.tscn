@@ -4406,7 +4406,12 @@ sources/3 = SubResource("TileSetAtlasSource_oyglc")
 size = Vector2(145.5, 120)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3ffft"]
-size = Vector2(141.75, 149.5)
+size = Vector2(54, 40)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jbofv"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mg7dd"]
+size = Vector2(60, 53.75)
 
 [node name="Level_Root" type="Node2D" unique_id=211247896]
 
@@ -4466,5 +4471,17 @@ shape = SubResource("RectangleShape2D_3kf05")
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit_back" unique_id=528181698]
-position = Vector2(-180, -356)
+position = Vector2(770, 11)
 shape = SubResource("RectangleShape2D_3ffft")
+
+[node name="Check_in" type="Area2D" parent="." unique_id=1631449932]
+position = Vector2(96, 101)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Check_in" unique_id=429959969]
+shape = SubResource("RectangleShape2D_jbofv")
+
+[node name="Medicine Cabinet" type="Area2D" parent="." unique_id=1153366092]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Medicine Cabinet" unique_id=794524323]
+position = Vector2(758, 119)
+shape = SubResource("RectangleShape2D_mg7dd")
