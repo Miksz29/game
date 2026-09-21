@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://3i1gd7x67jd6" path="res://assets/images/tileset/spritesheet_hospital_maternity.png" id="5_s8va5"]
 [ext_resource type="PackedScene" uid="uid://bs4px5mfnxd2b" path="res://scenes/nurse.tscn" id="10_qxy0u"]
 [ext_resource type="PackedScene" uid="uid://cltvcl34ht6vt" path="res://scenes/npc.tscn" id="11_excbq"]
+[ext_resource type="Script" uid="uid://b60iya7pukl61" path="res://scripts/level barrier/level1.gd" id="12_iav0o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_excbq"]
 texture = ExtResource("5_excbq")
@@ -8363,6 +8364,9 @@ gradient = SubResource("Gradient_7h2jl")
 fill = 1
 fill_from = Vector2(0.5, 0.5)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dnkej"]
+size = Vector2(24, 774)
+
 [node name="LevelRoot" unique_id=1260303348 instance=ExtResource("1_ksju7")]
 
 [node name="TileMapLayer" parent="." index="0" unique_id=317153713]
@@ -8416,3 +8420,11 @@ texture = SubResource("GradientTexture2D_bhunq")
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." index="10" unique_id=1081839324]
 color = Color(0.4817897, 0.4817894, 0.48178947, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." index="11" unique_id=108948908]
+position = Vector2(1626.75, 642)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" index="0" unique_id=184271674]
+position = Vector2(13.25, 19)
+shape = SubResource("RectangleShape2D_dnkej")
+script = ExtResource("12_iav0o")
