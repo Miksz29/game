@@ -1,23 +1,22 @@
 [gd_scene format=3 uid="uid://dhu7d5mfju5tc"]
 
 [ext_resource type="PackedScene" uid="uid://dkj03mgioy63u" path="res://scenes/levels/base_level.tscn" id="1_0wfyh"]
-[ext_resource type="Script" uid="uid://cyxutq0qgfmqg" path="res://scripts/main.gd" id="1_sugp2"]
 [ext_resource type="PackedScene" uid="uid://nnrywg0m6yud" path="res://scenes/pause_menu.tscn" id="3_sugp2"]
 
 [sub_resource type="GDScript" id="GDScript_0wfyh"]
 script/source = "extends Node2D
-
+ 
 var level: int = 1
 var current_level_root: Node = null
 var last_transition: String = \"forward\"
 var first_load: bool = true
 var level2_played: bool = false
-
+ 
 const DIALOGUE_SCENE = preload(\"res://dialouges/dialouge.tscn\")
 const INTRO_JSON = \"res://dialouges/player_monologue_level1.json\"
 const LEVEL2_JSON = \"res://dialouges/player_monologue_level2.json\"
-
-
+ 
+ 
 func _ready() -> void:
 	level = SaveManager.start_level
 	current_level_root = get_node(\"LevelRoot\")
@@ -42,17 +41,21 @@ func _load_level(level_number: int, transition_type: String) -> void:
 		var spawn_node = current_level_root.get_node_or_null(spawn_name)
 		if spawn_node:
 			player.global_position = spawn_node.global_position
+			var camera = player.get_node_or_null(\"Camera2D\")
+			if camera:
+				camera.reset_smoothing()
+				camera.make_current()
 
 	_setup_level(current_level_root)
 	
 	# Monologues
 	if level_number == 1 and SaveManager.play_intro:
-		SaveManager.play_intro = false
+		SaveManager.play_intro = true
 		_play_monologue.call_deferred(INTRO_JSON)
 	elif level_number == 2 and transition_type == \"forward\" and not is_initial_load and not level2_played:
 		level2_played = true
 		_play_monologue.call_deferred(LEVEL2_JSON)
-
+ 
 func _play_monologue(json_path: String) -> void:
 	var dialogue = DIALOGUE_SCENE.instantiate()
 	dialogue.d_file = json_path
@@ -60,6 +63,7 @@ func _play_monologue(json_path: String) -> void:
 	dialogue.dialouge_finished.connect(dialogue.queue_free)
 	dialogue.dialouge_finished.connect(_monologue_quest.bind(json_path))
 	dialogue.start()
+
 
 func _monologue_quest(finished_json: String) -> void:
 	match finished_json:
@@ -78,27 +82,26 @@ func _setup_level(level_root: Node) -> void:
 	var exit_back = level_root.get_node_or_null(\"Exit_back\")
 	if exit_back:
 		exit_back.body_entered.connect(_on_exit_back_body_entered)
-
+ 
 func _on_exit_body_entered(body: Node2D) -> void:
 	if body.name == \"Player\":
 		level += 1
 		last_transition = \"forward\"
 		call_deferred(\"_load_level\", level, last_transition)
-
+ 
 func _on_exit_back_body_entered(body: Node2D) -> void:
 	if body.name == \"Player\":
 		level -= 1
 		last_transition = \"back\"
 		call_deferred(\"_load_level\", level, last_transition)
+ 
 "
 
 [node name="Main" type="Node2D" unique_id=436067041]
-position = Vector2(-101, 0)
 script = SubResource("GDScript_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=1260303348 instance=ExtResource("1_0wfyh")]
 position = Vector2(180, -174)
-script = ExtResource("1_sugp2")
 
 [node name="Marker2D" type="Marker2D" parent="LevelRoot" unique_id=886106823]
 
