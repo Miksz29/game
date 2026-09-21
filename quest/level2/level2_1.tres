@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://c63iwb337lphf"]
+
+[ext_resource type="Script" uid="uid://bmoprbw58totu" path="res://quest/quest.gd" id="1_pc5b2"]
+
+[resource]
+script = ExtResource("1_pc5b2")
+id = "level2-1"
+description = "Check the medicine cabinet. Make sure all the medicines are there."
+metadata/_custom_type_script = "uid://bmoprbw58totu"

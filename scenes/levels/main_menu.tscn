@@ -12,9 +12,11 @@
 [ext_resource type="AudioStream" uid="uid://ddwrncfwva34h" path="res://assets/Music/Main Menu Music/Main Menu Song.wav" id="8_sn5u3"]
 
 [node name="Main Menu" type="Node2D" unique_id=1110394295]
+z_index = 1
 script = ExtResource("1_fsby3")
 
 [node name="MenuDesign" type="Sprite2D" parent="." unique_id=1638137892]
+z_index = 1
 position = Vector2(485.99994, 271)
 scale = Vector2(0.9739999, 0.9857142)
 texture = ExtResource("2_sn5u3")
@@ -26,6 +28,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Start" type="TextureButton" parent="Button_Manager" unique_id=2064441997]
+z_index = 1
 layout_mode = 0
 offset_left = 328.0
 offset_top = 363.0
@@ -35,6 +38,7 @@ texture_normal = ExtResource("2_leamy")
 texture_hover = ExtResource("3_721jg")
 
 [node name="Continue" type="TextureButton" parent="Button_Manager" unique_id=362528210]
+z_index = 1
 layout_mode = 0
 offset_left = 320.0
 offset_top = 417.0
@@ -44,6 +48,7 @@ texture_normal = ExtResource("5_wko7x")
 texture_hover = ExtResource("6_pwqr4")
 
 [node name="Exit" type="TextureButton" parent="Button_Manager" unique_id=1493376048]
+z_index = 1
 layout_mode = 0
 offset_left = 324.0
 offset_top = 476.0
@@ -54,6 +59,7 @@ texture_hover = ExtResource("5_keln3")
 
 [node name="fade_transition" parent="." unique_id=1903359986 instance=ExtResource("7_crctu")]
 visible = false
+z_index = 1
 
 [node name="Fade_Timer" type="Timer" parent="fade_transition" unique_id=326683749]
 
