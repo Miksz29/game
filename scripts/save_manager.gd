@@ -2,6 +2,7 @@ extends Node
 
 const SAVE_PATH = "user://save.cfg"
 var start_level: int = 1
+var play_intro: bool = false
 
 func save_level(level: int) -> void:
 	var cfg = ConfigFile.new()
