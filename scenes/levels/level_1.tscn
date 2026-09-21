@@ -8377,7 +8377,7 @@ tile_map_data = PackedByteArray("AAAEAAQAAAAHAAAAAAAEAAUAAAAHAAEAAAAEAAsAAAAHAAA
 tile_set = SubResource("TileSet_jbofv")
 
 [node name="npc" parent="." index="2" unique_id=625390128 instance=ExtResource("11_excbq")]
-position = Vector2(321, 442)
+position = Vector2(962, 410)
 scale = Vector2(4.3, 4.3)
 
 [node name="nurse" parent="." index="3" unique_id=1113068135 instance=ExtResource("10_qxy0u")]
@@ -8395,10 +8395,10 @@ tile_set = SubResource("TileSet_6d722")
 position = Vector2(1562, 627)
 
 [node name="SpawnFromLeft" type="Marker2D" parent="." index="6" unique_id=1157650482]
-position = Vector2(277, 647)
+position = Vector2(177, 650)
 
 [node name="Player" parent="." index="7" unique_id=46643244]
-position = Vector2(278, 636)
+position = Vector2(178, 631)
 
 [node name="Exit" parent="." index="8" unique_id=933412342]
 position = Vector2(1503, 392)

@@ -78,7 +78,7 @@ position = Vector2(-101, 0)
 script = SubResource("GDScript_0wfyh")
 
 [node name="LevelRoot" parent="." unique_id=1260303348 instance=ExtResource("1_0wfyh")]
-position = Vector2(254, -387)
+position = Vector2(180, -174)
 script = ExtResource("1_sugp2")
 
 [node name="Marker2D" type="Marker2D" parent="LevelRoot" unique_id=886106823]
