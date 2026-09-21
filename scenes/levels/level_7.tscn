@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://3i1gd7x67jd6" path="res://assets/images/tileset/spritesheet_hospital_maternity.png" id="6_ymk4h"]
 [ext_resource type="Texture2D" uid="uid://bjytyooxwrttv" path="res://assets/images/tileset/door-1.png" id="7_st48t"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="8_dfn7m"]
+[ext_resource type="PackedScene" uid="uid://dix04aes2y4yw" path="res://scenes/patient_1.tscn" id="10_q0wsq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rm7r"]
 texture = ExtResource("1_posk4")
@@ -3833,6 +3834,11 @@ tile_set = SubResource("TileSet_48u08")
 
 [node name="Player" parent="." unique_id=46643244 instance=ExtResource("8_dfn7m")]
 position = Vector2(615, 649)
+
+[node name="nurse" parent="." unique_id=1113068135 instance=ExtResource("10_q0wsq")]
+position = Vector2(1109.9999, 450)
+rotation = 1.5724727
+scale = Vector2(2.15748, 1.964664)
 
 [node name="Exit" type="Area2D" parent="." unique_id=64671954]
 position = Vector2(96, 101)

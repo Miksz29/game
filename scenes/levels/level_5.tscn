@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://basj5cwuw25en" path="res://assets/images/tileset/spritesheet_hospital_lab.png" id="7_h717f"]
 [ext_resource type="Texture2D" uid="uid://bjytyooxwrttv" path="res://assets/images/tileset/door-1.png" id="7_mxx4w"]
 [ext_resource type="Texture2D" uid="uid://3i1gd7x67jd6" path="res://assets/images/tileset/spritesheet_hospital_maternity.png" id="8_l8eod"]
+[ext_resource type="PackedScene" uid="uid://dix04aes2y4yw" path="res://scenes/patient_1.tscn" id="9_vvoq0"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="11_vm1kt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8rm7r"]
@@ -3396,13 +3397,18 @@ tile_map_data = PackedByteArray("AAAQAAUAAAAGAAIAAAARAAUAAAAEAAAAAAA=")
 tile_set = SubResource("TileSet_48u08")
 
 [node name="Player" parent="." unique_id=46643244 instance=ExtResource("11_vm1kt")]
-position = Vector2(615, 649)
+position = Vector2(570, 800)
+
+[node name="patient_1" parent="." unique_id=1113068135 instance=ExtResource("9_vvoq0")]
+position = Vector2(1108, 455.00003)
+rotation = 1.5659359
+scale = Vector2(1.7724292, 1.9635044)
 
 [node name="Exit" type="Area2D" parent="." unique_id=64671954]
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=477679662]
-position = Vector2(480, 799)
+position = Vector2(475, 842)
 shape = SubResource("RectangleShape2D_eqjcn")
 
 [node name="Exit_back" type="Area2D" parent="." unique_id=647065369]
