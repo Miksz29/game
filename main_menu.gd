@@ -12,12 +12,14 @@ func _ready() -> void:
 func _on_start_pressed() -> void:
 	button_type = "start"
 	SaveManager.start_level = 1
+	SaveManager.play_intro = true
 	$fade_transition.show()
 	$fade_transition/Fade_Timer.start()
 	$fade_transition/AnimationPlayer.play("fade_out")
 	
 func _on_continue_pressed() -> void:
 	button_type = "continue"
+	SaveManager.play_intro = false
 	SaveManager.start_level = SaveManager.load_level()
 	$fade_transition.show()
 	$fade_transition/Fade_Timer.start()

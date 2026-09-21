@@ -11,6 +11,9 @@ var level: int = 1
 var current_level_root: Node = null
 var last_transition: String = \"forward\"
 
+const DIALOGUE_SCENE = preload(\"res://dialouges/dialouge.tscn\")
+const INTRO_JSON = \"res://dialouges/player_monologue_level1.json\"
+
 
 func _ready() -> void:
 	level = SaveManager.start_level
@@ -35,6 +38,18 @@ func _load_level(level_number: int, transition_type: String) -> void:
 			player.global_position = spawn_node.global_position
 
 	_setup_level(current_level_root)
+	
+	# Play the intro monologue on a new game only
+	if level_number == 1 and SaveManager.play_intro:
+		_play_intro.call_deferred()
+
+func _play_intro() -> void:
+	SaveManager.play_intro = false
+	var dialogue = DIALOGUE_SCENE.instantiate()
+	dialogue.d_file = INTRO_JSON
+	add_child(dialogue)
+	dialogue.dialouge_finished.connect(dialogue.queue_free)
+	dialogue.start()
 
 func _setup_level(level_root: Node) -> void:
 	var exit = level_root.get_node_or_null(\"Exit\")
