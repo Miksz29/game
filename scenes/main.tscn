@@ -63,9 +63,7 @@ func _play_monologue(json_path: String) -> void:
 	dialogue.dialouge_finished.connect(dialogue.queue_free)
 	dialogue.dialouge_finished.connect(_monologue_quest.bind(json_path))
 	dialogue.start()
-<<<<<<< HEAD
- 
-=======
+
 
 func _monologue_quest(finished_json: String) -> void:
 	match finished_json:
@@ -76,7 +74,6 @@ func _monologue_quest(finished_json: String) -> void:
 			var quest = load(\"res://quest/level2/level2_1.tres\")
 			QuestManager.add_quest(quest)
 			
->>>>>>> 858def7881a43a3f066542790cf163f7ac5b40d4
 func _setup_level(level_root: Node) -> void:
 	var exit = level_root.get_node_or_null(\"Exit\")
 	if exit:
