@@ -57,7 +57,6 @@ func next_script():
 
 		get_tree().paused = false
 		emit_signal("dialouge_finished")
-		QuestManager.add_quest(quest_level1_1)
 		QuestUi.show()
 		return
 	
