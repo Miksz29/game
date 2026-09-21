@@ -12,9 +12,12 @@ func add_quest(questResource: Quest):
 	quest_added.emit(questResource)
 
 func complete_quest(questID: String):
-	if not activeQuests.has(questID) and activeQuests[questID].is_completed == true:
+	if not activeQuests.has(questID):
 		return
-	activeQuests[questID].is_completed = true
-	quest_completed.emit(questID)
+	var quest_resource = activeQuests[questID]
+	if quest_resource.is_completed:
+		return
+	quest_resource.is_completed = true
+	quest_completed.emit(quest_resource)
 
 	

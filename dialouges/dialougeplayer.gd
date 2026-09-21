@@ -4,7 +4,7 @@ signal dialouge_finished
 var dialouge = []
 var current_dialogue_id = 0
 var d_active = false
-
+@onready var quest_level1_1: Quest = preload("res://quest/level1/level1_1.tres")
 var text_tween: Tween
 
 var waiting_for_release = false
@@ -57,6 +57,8 @@ func next_script():
 
 		get_tree().paused = false
 		emit_signal("dialouge_finished")
+		QuestManager.add_quest(quest_level1_1)
+		QuestUi.show()
 		return
 	
 	$CanvasLayer/NinePatchRect/Name.text = dialouge[current_dialogue_id]['name']

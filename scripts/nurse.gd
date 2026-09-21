@@ -13,7 +13,7 @@ var is_chatting = false
 
 func _ready() -> void:
 	animated_sprite_2d.play("idle_nurse")
-	QuestManager.add_quest(quest_level1_1)
+	
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting and !quest_level1_1.is_completed:

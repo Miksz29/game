@@ -7,7 +7,7 @@ func _ready() -> void:
 	Bgm.stop()
 	print("HAS SAVE: ", SaveManager.has_save())
 	$Button_Manager/Continue.visible = SaveManager.has_save()
-
+	QuestUi.hide()
 
 func _on_start_pressed() -> void:
 	button_type = "start"
@@ -24,7 +24,8 @@ func _on_continue_pressed() -> void:
 	$fade_transition.show()
 	$fade_transition/Fade_Timer.start()
 	$fade_transition/AnimationPlayer.play("fade_out")
-
+	await $fade_transition/Fade_Timer.timeout
+	QuestUi.show()
 func _on_exit_pressed() -> void:
 	get_tree().quit()
 

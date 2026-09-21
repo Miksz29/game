@@ -1,0 +1,13 @@
+[gd_scene format=3 uid="uid://bnc5xs1mfnt5k"]
+
+[ext_resource type="Script" uid="uid://6hd26q4ru37a" path="res://quest/questUi.gd" id="1_f8r37"]
+
+[node name="CanvasLayer" type="CanvasLayer" unique_id=249517526]
+script = ExtResource("1_f8r37")
+
+[node name="PanelContainer" type="PanelContainer" parent="." unique_id=485001035]
+offset_right = 400.0
+offset_bottom = 117.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer" unique_id=1538872369]
+layout_mode = 2
