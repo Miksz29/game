@@ -8,6 +8,8 @@
 [ext_resource type="Texture2D" uid="uid://3i1gd7x67jd6" path="res://assets/images/tileset/spritesheet_hospital_maternity.png" id="5_mqegc"]
 [ext_resource type="Texture2D" uid="uid://bjytyooxwrttv" path="res://assets/images/tileset/door-1.png" id="7_mqegc"]
 [ext_resource type="Texture2D" uid="uid://b4qxs7o6jojx3" path="res://assets/images/tileset/Textures-16.png" id="7_ugcn1"]
+[ext_resource type="Script" uid="uid://xuaxnkimonml" path="res://quest/scripts/level3/level2-1.gd" id="9_pimnq"]
+[ext_resource type="Script" uid="uid://b45hh3ptu06f1" path="res://scripts/level barrier/level3.gd" id="10_2bnyt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk1g"]
 texture = ExtResource("1_3kf05")
@@ -5066,10 +5068,13 @@ size = Vector2(145.5, 120)
 size = Vector2(54, 40)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jbofv"]
-size = Vector2(54, 40)
+size = Vector2(54, 55)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mg7dd"]
-size = Vector2(60, 53.75)
+size = Vector2(60, 97.875)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_n6eey"]
+size = Vector2(855.75, 19.75)
 
 [node name="Level_Root" type="Node2D" unique_id=211247896]
 
@@ -5115,14 +5120,14 @@ scale = Vector2(2.775466, 2.8027024)
 tile_map_data = PackedByteArray("AAAMAAIAAAACAAMAAAAWAAIAAAAGAAIAAAAKAAIAAgADAAAAAAAaAAcAAgACAAAAAAA=")
 tile_set = SubResource("TileSet_4dhw6")
 
-[node name="Player" parent="." unique_id=46643244 instance=ExtResource("1_nk8s7")]
+[node name="Player" parent="." unique_id=46643244 groups=["player"] instance=ExtResource("1_nk8s7")]
 position = Vector2(615, 649)
 
 [node name="Exit" type="Area2D" parent="." unique_id=741026184]
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=1739849265]
-position = Vector2(479, 679)
+position = Vector2(479, 716)
 shape = SubResource("RectangleShape2D_3kf05")
 
 [node name="Exit_back" type="Area2D" parent="." unique_id=1215415778]
@@ -5136,11 +5141,23 @@ shape = SubResource("RectangleShape2D_3ffft")
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Check_in" unique_id=429959969]
-position = Vector2(770, 11)
+position = Vector2(770, 18.5)
 shape = SubResource("RectangleShape2D_jbofv")
 
 [node name="Medicine Cabinet" type="Area2D" parent="." unique_id=1153366092]
+script = ExtResource("9_pimnq")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Medicine Cabinet" unique_id=794524323]
-position = Vector2(758, 119)
+position = Vector2(758, 141.0625)
 shape = SubResource("RectangleShape2D_mg7dd")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1481489330]
+position = Vector2(1626.75, 642)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=668367963]
+position = Vector2(-779.75, 89)
+shape = SubResource("RectangleShape2D_n6eey")
+script = ExtResource("10_2bnyt")
+
+[connection signal="body_entered" from="Medicine Cabinet" to="Medicine Cabinet" method="_on_body_entered"]
+[connection signal="body_exited" from="Medicine Cabinet" to="Medicine Cabinet" method="_on_body_exited"]
