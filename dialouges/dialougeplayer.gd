@@ -70,5 +70,5 @@ func next_script():
 		text_tween.kill()
 	text_tween = create_tween().set_pause_mode(Tween.TWEEN_PAUSE_PROCESS)
 	var text_length = $CanvasLayer/NinePatchRect/Text.text.length()
-	var duration = text_length * 0.03
+	var duration = text_length * 0.07
 	text_tween.tween_property($CanvasLayer/NinePatchRect/Text, "visible_characters", text_length, duration)
