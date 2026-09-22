@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://3i1gd7x67jd6" path="res://assets/images/tileset/spritesheet_hospital_maternity.png" id="5_mqegc"]
 [ext_resource type="Texture2D" uid="uid://bjytyooxwrttv" path="res://assets/images/tileset/door-1.png" id="7_mqegc"]
 [ext_resource type="Texture2D" uid="uid://b4qxs7o6jojx3" path="res://assets/images/tileset/Textures-16.png" id="7_ugcn1"]
+[ext_resource type="PackedScene" uid="uid://c8qqwaw4sfdvm" path="res://scenes/npc5.tscn" id="9_n6eey"]
 [ext_resource type="Script" uid="uid://xuaxnkimonml" path="res://quest/scripts/level3/level2-1.gd" id="9_pimnq"]
 [ext_resource type="Script" uid="uid://b45hh3ptu06f1" path="res://scripts/level barrier/level3.gd" id="10_2bnyt"]
 
@@ -5122,6 +5123,10 @@ tile_set = SubResource("TileSet_4dhw6")
 
 [node name="Player" parent="." unique_id=46643244 groups=["player"] instance=ExtResource("1_nk8s7")]
 position = Vector2(615, 649)
+
+[node name="CharacterBody2D" parent="." unique_id=143268733 instance=ExtResource("9_n6eey")]
+position = Vector2(1188.0002, 384)
+scale = Vector2(2.212484, 2.3436596)
 
 [node name="Exit" type="Area2D" parent="." unique_id=741026184]
 position = Vector2(96, 101)

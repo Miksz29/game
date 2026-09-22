@@ -1,14 +1,14 @@
-[gd_scene format=3 uid="uid://dix04aes2y4yw"]
+[gd_scene format=3 uid="uid://bsj2v2n5nysta"]
 
-[ext_resource type="Script" uid="uid://cji6bcpoy8q4d" path="res://scripts/nurse.gd" id="1_6vi0y"]
-[ext_resource type="Texture2D" uid="uid://dbc213s158gct" path="res://assets/images/player/Player/TownsPeople2_Animations.png" id="2_6vi0y"]
-[ext_resource type="PackedScene" uid="uid://blu1jvwrosmqx" path="res://dialouges/dialouge.tscn" id="3_2iib5"]
+[ext_resource type="Script" uid="uid://cji6bcpoy8q4d" path="res://scripts/nurse.gd" id="1_4bbsl"]
+[ext_resource type="Texture2D" uid="uid://dbc213s158gct" path="res://assets/images/player/Player/TownsPeople2_Animations.png" id="2_jy5as"]
+[ext_resource type="PackedScene" uid="uid://blu1jvwrosmqx" path="res://dialouges/dialouge.tscn" id="3_hiqyn"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_6vi0y"]
-atlas = ExtResource("2_6vi0y")
-region = Rect2(72, 338, 18, 26)
+[sub_resource type="AtlasTexture" id="AtlasTexture_4bbsl"]
+atlas = ExtResource("2_jy5as")
+region = Rect2(126, 338, 18, 26)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_6vi0y"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_6d722"]
 animations = [{
 "frames": [],
 "loop": 1,
@@ -17,7 +17,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_6vi0y")
+"texture": SubResource("AtlasTexture_4bbsl")
 }],
 "loop": 1,
 "name": &"idle_nurse",
@@ -30,15 +30,15 @@ radius = 11.211352
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbofv"]
 radius = 18.352262
 
-[node name="Patient 1" type="CharacterBody2D" unique_id=1113068135]
+[node name="Patient 2" type="CharacterBody2D" unique_id=1113068135]
 scale = Vector2(1.2, 1.2)
 collision_mask = 0
-script = ExtResource("1_6vi0y")
+script = ExtResource("1_4bbsl")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="." unique_id=1168528317]
 position = Vector2(-1.1920929e-07, -1.1920929e-07)
 scale = Vector2(1.5972221, 1.2980769)
-sprite_frames = SubResource("SpriteFrames_6vi0y")
+sprite_frames = SubResource("SpriteFrames_6d722")
 animation = &"idle_nurse"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=995581062]
@@ -52,21 +52,19 @@ shape = SubResource("CircleShape2D_6d722")
 position = Vector2(-0.83333313, 4.9999986)
 shape = SubResource("CircleShape2D_jbofv")
 
-[node name="Dialouge" parent="." unique_id=2115651826 instance=ExtResource("3_2iib5")]
+[node name="Dialouge" parent="." unique_id=2115651826 instance=ExtResource("3_hiqyn")]
 anchors_preset = -1
-d_file = "res://dialouges/patient_sleeping.json"
+d_file = "res://dialouges/patient_gleen.json"
 metadata/_edit_use_anchors_ = true
 
 [node name="NinePatchRect" parent="Dialouge/CanvasLayer" parent_id_path=PackedInt32Array(2115651826, 2002920023) index="0" unique_id=1161498009]
 offset_right = 292.5
-metadata/_edit_use_anchors_ = true
 
 [node name="Name" parent="Dialouge/CanvasLayer/NinePatchRect" index="0" unique_id=2001400809]
 offset_left = 55.0
 offset_top = 127.00001
 offset_right = 721.6667
 offset_bottom = 210.33331
-metadata/_edit_use_anchors_ = true
 
 [node name="Text" parent="Dialouge/CanvasLayer/NinePatchRect" index="1" unique_id=222685130]
 offset_left = 55.0
@@ -74,7 +72,6 @@ offset_top = 160.0
 offset_right = 1611.6667
 offset_bottom = 540.55554
 theme_override_font_sizes/normal_font_size = 83
-metadata/_edit_use_anchors_ = true
 
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
 [connection signal="body_exited" from="chat_detection_area" to="." method="_on_chat_detection_area_body_exited"]
