@@ -3864,7 +3864,7 @@ position = Vector2(615, 649)
 [node name="Patient 2" parent="." unique_id=1113068135 instance=ExtResource("9_sjq8i")]
 position = Vector2(1112.0001, 451)
 rotation = 1.5955008
-scale = Vector2(1.800186, 1.939497)
+scale = Vector2(2.0197105, 2.1455476)
 
 [node name="Exit" type="Area2D" parent="." unique_id=64671954]
 position = Vector2(96, 101)

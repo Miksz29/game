@@ -12,6 +12,7 @@ func _on_quest_added(quest: Quest):
 	var label := Label.new()
 	label.name = quest.id
 	label.text = quest.description
+	label.add_theme_color_override("font_color", Color.BLACK)
 	quest_list.add_child(label)
 
 func _on_quest_completed(quest: Quest):
