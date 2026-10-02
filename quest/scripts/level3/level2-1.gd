@@ -1,17 +1,24 @@
 extends Area2D
 
 @onready var quest_to_complete: Quest = preload("res://quest/level2/level2_1.tres")
-@onready var quest_to_complete2: Quest = preload("res://quest/level3/level3_1.tres")
+@onready var quest_to_complete2: Quest = preload("res://quest/level2/level2_2.tres")
 var is_player_inside: bool = false
+
+@onready var prompt_label = $Label
+
+func _ready() -> void:
+	prompt_label.hide()
 
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_player_inside = true
-		print("Inside")
+		if !quest_to_complete.is_completed:
+			prompt_label.show()
 		
 func _on_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		is_player_inside = false
+		prompt_label.hide()
 
 
 func _unhandled_input(event: InputEvent) -> void:

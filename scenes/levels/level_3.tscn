@@ -11,6 +11,8 @@
 [ext_resource type="PackedScene" uid="uid://c8qqwaw4sfdvm" path="res://scenes/npc5.tscn" id="9_n6eey"]
 [ext_resource type="Script" uid="uid://xuaxnkimonml" path="res://quest/scripts/level3/level2-1.gd" id="9_pimnq"]
 [ext_resource type="Script" uid="uid://b45hh3ptu06f1" path="res://scripts/level barrier/level3.gd" id="10_2bnyt"]
+[ext_resource type="Script" uid="uid://dtsmwppwotmlo" path="res://scripts/lola_lily.gd" id="10_f6egh"]
+[ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="11_qi5uv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk1g"]
 texture = ExtResource("1_3kf05")
@@ -5127,6 +5129,17 @@ position = Vector2(615, 649)
 [node name="CharacterBody2D" parent="." unique_id=143268733 instance=ExtResource("9_n6eey")]
 position = Vector2(1188, 362)
 scale = Vector2(2.482079, 2.6946406)
+script = ExtResource("10_f6egh")
+
+[node name="Label" type="Label" parent="CharacterBody2D" unique_id=1812986888]
+offset_left = -82.59207
+offset_top = 20.781998
+offset_right = 19.86319
+offset_bottom = 39.467163
+theme_override_fonts/font = ExtResource("11_qi5uv")
+theme_override_font_sizes/font_size = 9
+text = "Press 'E' to interact and
+press Enter to continue"
 
 [node name="Exit" type="Area2D" parent="." unique_id=741026184]
 position = Vector2(96, 101)
@@ -5155,6 +5168,15 @@ script = ExtResource("9_pimnq")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Medicine Cabinet" unique_id=794524323]
 position = Vector2(758, 141.0625)
 shape = SubResource("RectangleShape2D_mg7dd")
+
+[node name="Label" type="Label" parent="Medicine Cabinet" unique_id=1403112787]
+offset_left = 790.0
+offset_top = 183.0
+offset_right = 1026.0
+offset_bottom = 229.0
+theme_override_fonts/font = ExtResource("11_qi5uv")
+theme_override_font_sizes/font_size = 24
+text = "Press 'Q' to interact"
 
 [node name="StaticBody2D" type="StaticBody2D" parent="." unique_id=1481489330]
 position = Vector2(1626.75, 642)
