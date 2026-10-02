@@ -8,8 +8,10 @@
 script = ExtResource("1_f8r37")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=485001035]
-offset_right = 301.0
-offset_bottom = 169.0
+offset_left = 659.0
+offset_top = 370.0
+offset_right = 960.0
+offset_bottom = 539.0
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PanelContainer" unique_id=1652211515]
 layout_mode = 2

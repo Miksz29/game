@@ -4,22 +4,25 @@ signal stick_collected
 signal apple_collected
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
-@onready var quest_to_complete: Quest = preload("res://quest/level1/level1_1.tres")
+@onready var previous_quest: Quest = preload("res://quest/level2/level2_1.tres")
+@onready var quest_to_complete: Quest = preload("res://quest/level2/level2_2.tres")
+@onready var quest_to_complete2: Quest = preload("res://quest/level3/level3_1.tres")
 @onready var prompt_label = $Label
 
 const SPEED = 300.0
 var player_in_chat_zone = false
 var is_chatting = false
 
+@export var quest_resource: Quest
 
 func _ready() -> void:
 	animated_sprite_2d.play("idle_nurse")
 	if prompt_label!= null:
 		prompt_label.hide()
-	
+
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting and !quest_to_complete.is_completed:
+	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting and previous_quest.is_completed and !quest_to_complete.is_completed :
 		$Dialouge.start()
 		is_chatting = true
 
@@ -34,11 +37,12 @@ func _process(delta: float) -> void:
 func _on_dialouge_dialouge_finished() -> void:
 	is_chatting = false
 	QuestManager.complete_quest(quest_to_complete.id)
+	QuestManager.add_quest(quest_to_complete2)
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
 		player_in_chat_zone = true
-		if !quest_to_complete.is_completed:
+		if !quest_to_complete.is_completed and previous_quest.is_completed:
 			prompt_label.show()
 
 
