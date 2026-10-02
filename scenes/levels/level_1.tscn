@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cltvcl34ht6vt" path="res://scenes/npc.tscn" id="11_excbq"]
 [ext_resource type="PackedScene" uid="uid://bdlb3wdjcapcn" path="res://scenes/npc2.tscn" id="12_dnkej"]
 [ext_resource type="Script" uid="uid://b60iya7pukl61" path="res://scripts/level barrier/level1.gd" id="12_iav0o"]
+[ext_resource type="Resource" uid="uid://35vrnvec30v5" path="res://quest/level1/level1_1.tres" id="12_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://cdpakr77tur7y" path="res://scenes/npc3.tscn" id="13_mm8aj"]
 [ext_resource type="PackedScene" uid="uid://cbxlj3srarbfv" path="res://scenes/npc4.tscn" id="14_wtwp4"]
 
@@ -8391,6 +8392,7 @@ scale = Vector2(3.6338782, 3.545136)
 position = Vector2(1465, 622)
 scale = Vector2(1.6, 1.6)
 slide_on_ceiling = false
+quest_resource = ExtResource("12_iwr0g")
 
 [node name="npc2" parent="." index="4" unique_id=143268733 instance=ExtResource("12_dnkej")]
 position = Vector2(899, 872)

@@ -3,6 +3,7 @@
 [ext_resource type="Script" uid="uid://bmoprbw58totu" path="res://quest/quest.gd" id="1_4oa77"]
 
 [resource]
+resource_local_to_scene = true
 script = ExtResource("1_4oa77")
 description = "Talk to the head nurse"
 metadata/_custom_type_script = "uid://bmoprbw58totu"

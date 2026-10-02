@@ -5125,8 +5125,8 @@ tile_set = SubResource("TileSet_4dhw6")
 position = Vector2(615, 649)
 
 [node name="CharacterBody2D" parent="." unique_id=143268733 instance=ExtResource("9_n6eey")]
-position = Vector2(1188.0002, 384)
-scale = Vector2(2.212484, 2.3436596)
+position = Vector2(1188, 362)
+scale = Vector2(2.482079, 2.6946406)
 
 [node name="Exit" type="Area2D" parent="." unique_id=741026184]
 position = Vector2(96, 101)
