@@ -1,6 +1,7 @@
 extends CanvasLayer
 
-@onready var quest_list = $PanelContainer/VBoxContainer
+@onready var label_1 = $PanelContainer/HBoxContainer/Label_1
+@onready var label_2 = $PanelContainer/HBoxContainer/Label_2
 
 func _ready():
 	QuestManager.quest_added.connect(_on_quest_added)
@@ -9,16 +10,29 @@ func _ready():
 func _on_quest_added(quest: Quest):
 	if quest.is_completed:
 		return
-	var label := Label.new()
-	label.name = quest.id
-	label.text = quest.description
-	label.add_theme_color_override("font_color", Color.BLACK)
-	quest_list.add_child(label)
-
+	if (!label_1.get_meta("isAvailable")):
+		label_1.set_meta("questId",quest.id)
+		label_1.set_meta("isAvailable",true)
+		label_1.text = quest.description
+	elif(!label_2.get_meta("isAvailable")):
+		label_2.set_meta("questId",quest.id)
+		label_2.set_meta("isAvailable",true)
+		label_2.text = quest.description
+	
 func _on_quest_completed(quest: Quest):
-	var label = quest_list.get_node_or_null(quest.id)
-	if label != null:
-		label.modulate = Color.GREEN
-		label.text = quest.description + " - DONE!"
-		await get_tree().create_timer(3.0).timeout
-		label.queue_free()
+	if (label_1.get_meta("questId")==quest.id):
+		label_1.add_theme_color_override("font_color", Color("#007600"))
+		print("Removing "+quest.id)
+		await get_tree().create_timer(1.5).timeout
+		label_1.text = ""
+		label_1.set_meta("isAvailable",false)
+		label_1.add_theme_color_override("font_color", Color.BLACK)
+	elif (label_2.get_meta("questId")==quest.id):
+		label_2.add_theme_color_override("font_color", Color("#007600"))
+		await get_tree().create_timer(1.5).timeout
+		label_2.text = ""
+		label_2.set_meta("isAvailable",false)
+		label_2.add_theme_color_override("font_color", Color.BLACK)
+		
+		
+		
