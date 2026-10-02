@@ -25,10 +25,10 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_6d722"]
-radius = 11.211352
+radius = 7.6829515
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_jbofv"]
-radius = 18.352262
+radius = 10.833333
 
 [node name="Patient 2" type="CharacterBody2D" unique_id=1113068135]
 scale = Vector2(1.2, 1.2)

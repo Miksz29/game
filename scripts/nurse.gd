@@ -9,14 +9,20 @@ const SPEED = 300.0
 var player_in_chat_zone = false
 var is_chatting = false
 
-@onready var quest_level1_1: Quest = preload("res://quest/level1/level1_1.tres") 
+@export var quest_resource: Quest
 
 func _ready() -> void:
 	animated_sprite_2d.play("idle_nurse")
 	
+func _quest_is_completed() -> bool:
+	if quest_resource == null:
+		return false
+	if QuestManager.activeQuests.has(quest_resource.id):
+		return QuestManager.activeQuests[quest_resource.id].is_completed
+	return false
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting and !quest_level1_1.is_completed:
+	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting and not _quest_is_completed():
 		$Dialouge.start()
 		is_chatting = true
 
@@ -30,7 +36,8 @@ func _process(delta: float) -> void:
 
 func _on_dialouge_dialouge_finished() -> void:
 	is_chatting = false
-	QuestManager.complete_quest("level1-1")
+	if quest_resource != null:
+		QuestManager.complete_quest(quest_resource.id)
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
