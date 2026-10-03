@@ -10032,13 +10032,13 @@ tile_map_data = PackedByteArray("AAAFAAEAAAAHAAAAAAAFAAIAAAAHAAEAAAAGAAEAAAAHAAA
 tile_set = SubResource("TileSet_gpe64")
 
 [node name="SpawnFromRight" type="Marker2D" parent="." unique_id=2011574690]
-position = Vector2(262, 369)
+position = Vector2(256, 206)
 
 [node name="SpawnFromLeft" type="Marker2D" parent="." unique_id=219180308]
-position = Vector2(267, 361)
+position = Vector2(261, 198)
 
 [node name="Player" parent="." unique_id=46643244 instance=ExtResource("11_05se8")]
-position = Vector2(266, 359)
+position = Vector2(264, 196)
 
 [node name="Exit" type="Area2D" parent="." unique_id=1083399990]
 position = Vector2(96, 101)

@@ -8,8 +8,8 @@
 script = ExtResource("1_f8r37")
 
 [node name="PanelContainer" type="PanelContainer" parent="." unique_id=485001035]
-offset_left = 659.0
-offset_top = 370.0
+offset_left = 681.0
+offset_top = 409.0
 offset_right = 960.0
 offset_bottom = 539.0
 
@@ -23,33 +23,32 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=7987135]
 layout_mode = 2
-theme_override_constants/margin_left = 19
+theme_override_constants/margin_left = 15
 
 [node name="Label_1" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1973282202]
-custom_minimum_size = Vector2(90, 130)
-custom_maximum_size = Vector2(90, 130)
+custom_minimum_size = Vector2(90, 110)
+custom_maximum_size = Vector2(90, 110)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0v81y")
-theme_override_font_sizes/font_size = 22
-text = "sfsafsafsadfsafsadfssfdfdfgdfgdfgdfgdfgdfg"
+theme_override_font_sizes/font_size = 18
 autowrap_mode = 3
 metadata/isAvailable = false
 metadata/questId = ""
 
 [node name="MarginContainer2" type="MarginContainer" parent="PanelContainer/HBoxContainer" unique_id=1058967127]
 layout_mode = 2
-theme_override_constants/margin_right = 68
+theme_override_constants/margin_right = 57
 
 [node name="Label_2" type="Label" parent="PanelContainer/HBoxContainer" unique_id=1134801943]
-custom_minimum_size = Vector2(90, 130)
-custom_maximum_size = Vector2(90, 130)
+custom_minimum_size = Vector2(90, 110)
+custom_maximum_size = Vector2(90, 110)
 layout_mode = 2
 size_flags_horizontal = 3
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("3_0v81y")
-theme_override_font_sizes/font_size = 22
+theme_override_font_sizes/font_size = 18
 horizontal_alignment = 1
 autowrap_mode = 3
 metadata/isAvailable = false
