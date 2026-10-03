@@ -15,7 +15,7 @@ func _on_start_pressed() -> void:
 	SaveManager.play_intro = true
 	$fade_transition.show()
 	$fade_transition/Fade_Timer.start()
-	$fade_transition/AnimationPlayer.play("fade_out")
+	$fade_transition/AnimationPlayer.play("fade_in")
 	
 func _on_continue_pressed() -> void:
 	button_type = "continue"
@@ -23,7 +23,7 @@ func _on_continue_pressed() -> void:
 	SaveManager.start_level = SaveManager.load_level()
 	$fade_transition.show()
 	$fade_transition/Fade_Timer.start()
-	$fade_transition/AnimationPlayer.play("fade_out")
+	$fade_transition/AnimationPlayer.play("fade_in")
 	await $fade_transition/Fade_Timer.timeout
 	QuestUi.show()
 func _on_exit_pressed() -> void:
@@ -31,6 +31,8 @@ func _on_exit_pressed() -> void:
 
 
 func _on_fade_timer_timeout() -> void:
-	if button_type == "start" or button_type == "continue":
+	if button_type == "start":
+		get_tree().change_scene_to_file("res://scenes/text_screen.tscn")
+	elif button_type == "continue":
 		get_tree().create_timer(1.0).timeout.connect(Bgm.play)
 		get_tree().change_scene_to_file("res://scenes/main.tscn")
