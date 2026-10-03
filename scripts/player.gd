@@ -1,7 +1,7 @@
 extends CharacterBody2D
  
- 
-const SPEED = 200.0
+@export var next_level_path: String
+const SPEED = 160.0
  
 var last_direction: Vector2 = Vector2.RIGHT
  
@@ -49,4 +49,5 @@ func player():
 
 
 func _on_exit_body_entered(_body: Node2D) -> void:
-	pass
+	if next_level_path != "":
+		get_tree().change_scene_to_file(next_level_path)

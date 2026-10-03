@@ -5,6 +5,7 @@ var current_level_root: Node = null
 var last_transition: String = "forward"
 var first_load: bool = true
 var level2_played: bool = false
+var is_loading: bool = false
  
 const DIALOGUE_SCENE = preload("res://dialouges/dialouge.tscn")
 const INTRO_JSON = "res://dialouges/player_monologue_level1.json"
@@ -17,18 +18,39 @@ func _ready() -> void:
 	_load_level(level, "forward")
 	
 func _load_level(level_number: int, transition_type: String) -> void:
+	if is_loading:
+		return
+	is_loading = true
+
 	var is_initial_load = first_load
 	first_load = false
+
+	var level_path = "res://scenes/levels/level_%s.tscn" % level_number
+
+	
+	ResourceLoader.load_threaded_request(level_path)
+
+	
+	while ResourceLoader.load_threaded_get_status(level_path) == ResourceLoader.THREAD_LOAD_IN_PROGRESS:
+		await get_tree().process_frame
+
+	var status = ResourceLoader.load_threaded_get_status(level_path)
+	if status != ResourceLoader.THREAD_LOAD_LOADED:
+		push_error("Failed to load level: " + level_path)
+		is_loading = false
+		return
+
+	var new_level_scene = ResourceLoader.load_threaded_get(level_path)
+
 	
 	if current_level_root:
 		current_level_root.queue_free()
-		
-	var level_path = "res://scenes/levels/level_%s.tscn" % level_number
-	current_level_root = load(level_path).instantiate()
+
+	current_level_root = new_level_scene.instantiate()
 	add_child(current_level_root)
 	current_level_root.name = "LevelRoot"
 	SaveManager.save_level(level_number)
-	
+
 	var player = current_level_root.get_node_or_null("Player")
 	if player:
 		var spawn_name = "SpawnFromLeft" if transition_type == "forward" else "SpawnFromRight"
@@ -38,8 +60,18 @@ func _load_level(level_number: int, transition_type: String) -> void:
 			var camera = player.get_node_or_null("Camera2D")
 			if camera:
 				camera.reset_smoothing()
- 
+
 	_setup_level(current_level_root)
+
+	# Monologues
+	if level_number == 1 and SaveManager.play_intro:
+		SaveManager.play_intro = false
+		_play_monologue.call_deferred(INTRO_JSON)
+	elif level_number == 2 and transition_type == "forward" and not is_initial_load and not level2_played:
+		level2_played = true
+		_play_monologue.call_deferred(LEVEL2_JSON)
+
+	is_loading = false
 	
 	# Monologues
 	if level_number == 1 and SaveManager.play_intro:
@@ -76,4 +108,6 @@ func _on_exit_back_body_entered(body: Node2D) -> void:
 		level -= 1
 		last_transition = "back"
 		call_deferred("_load_level", level, last_transition)
+
+
  
