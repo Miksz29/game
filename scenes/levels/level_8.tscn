@@ -10204,13 +10204,13 @@ tile_map_data = PackedByteArray("AAATAPr/AAAFAAQAAAAVAPr/AAAGAAQAAAASAPv/AAAGAAQ
 tile_set = SubResource("TileSet_jbofv")
 
 [node name="SpawnFromRight" type="Marker2D" parent="." unique_id=2011574690]
-position = Vector2(262, 369)
+position = Vector2(771, 220)
 
 [node name="SpawnFromLeft" type="Marker2D" parent="." unique_id=219180308]
-position = Vector2(267, 361)
+position = Vector2(776, 212)
 
 [node name="Player" parent="." unique_id=46643244 instance=ExtResource("11_mnqm8")]
-position = Vector2(266, 359)
+position = Vector2(775, 210)
 
 [node name="Exit" type="Area2D" parent="." unique_id=1083399990]
 position = Vector2(96, 101)

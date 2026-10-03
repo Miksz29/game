@@ -5130,14 +5130,15 @@ position = Vector2(615, 649)
 position = Vector2(1188, 362)
 scale = Vector2(2.482079, 2.6946406)
 script = ExtResource("10_f6egh")
+quest_resource = null
 
-[node name="Label" type="Label" parent="CharacterBody2D" unique_id=1812986888]
-offset_left = -82.59207
-offset_top = 20.781998
-offset_right = 19.86319
-offset_bottom = 39.467163
+[node name="Label" type="Label" parent="CharacterBody2D" unique_id=682534809]
+offset_left = -108.37688
+offset_top = 15.215392
+offset_right = 11.623123
+offset_bottom = 36.215393
 theme_override_fonts/font = ExtResource("11_qi5uv")
-theme_override_font_sizes/font_size = 9
+theme_override_font_sizes/font_size = 11
 text = "Press 'E' to interact and
 press Enter to continue"
 
