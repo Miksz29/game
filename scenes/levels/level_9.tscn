@@ -7236,6 +7236,9 @@ size = Vector2(141.75, 149.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_e8x4w"]
 size = Vector2(257, 75)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b7r0f"]
+size = Vector2(253.75, 104.5)
+
 [node name="Node2D" type="Node2D" unique_id=1856569413]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1901521624]
@@ -7398,8 +7401,7 @@ position = Vector2(1340, 708)
 script = ExtResource("12_1hv7j")
 
 [node name="Dialouge 3" type="CollisionShape2D" parent="Area2D2" unique_id=476408737]
-visible = false
-position = Vector2(-763.5, 1759)
+position = Vector2(-753, 2213)
 shape = SubResource("RectangleShape2D_e8x4w")
 
 [node name="Dialouge" parent="Area2D2" unique_id=791963784 instance=ExtResource("13_lbaq2")]
@@ -7426,6 +7428,22 @@ offset_bottom = -746.0
 d_file = "res://dialouges/level_9(3).json"
 metadata/_edit_use_anchors_ = true
 
+[node name="Area2D6" type="Area2D" parent="." unique_id=1962478296]
+position = Vector2(1340, 708)
+script = ExtResource("12_1hv7j")
+
+[node name="Dialouge 6" type="CollisionShape2D" parent="Area2D6" unique_id=335011822]
+position = Vector2(-760.875, -147)
+shape = SubResource("RectangleShape2D_b7r0f")
+
+[node name="Dialouge" parent="Area2D6" unique_id=2113933144 instance=ExtResource("13_lbaq2")]
+offset_left = -1082.0
+offset_top = -746.0
+offset_right = -1082.0
+offset_bottom = -746.0
+d_file = "res://dialouges/level_9(6).json"
+metadata/_edit_use_anchors_ = true
+
 [connection signal="body_entered" from="TileMapLayer11/Area2D2" to="TileMapLayer11/Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="TileMapLayer11/Area2D2" to="TileMapLayer11/Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D4" to="Area2D4" method="_on_body_entered"]
@@ -7439,3 +7457,5 @@ metadata/_edit_use_anchors_ = true
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D3" to="Area2D3" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D3" to="Area2D3" method="_on_body_exited"]
+[connection signal="body_entered" from="Area2D6" to="Area2D6" method="_on_body_entered"]
+[connection signal="body_exited" from="Area2D6" to="Area2D6" method="_on_body_exited"]
