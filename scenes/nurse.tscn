@@ -65,20 +65,15 @@ shape = SubResource("CircleShape2D_jbofv")
 anchors_preset = -1
 d_file = "res://dialouges/nurse_level1_dialouge.json"
 
-[node name="NinePatchRect" parent="Dialouge/CanvasLayer" parent_id_path=PackedInt32Array(2115651826, 2002920023) index="0" unique_id=1161498009]
-offset_right = 292.5
+[node name="Name" parent="Dialouge/CanvasLayer/NinePatchRect" parent_id_path=PackedInt32Array(2115651826, 1161498009) index="0" unique_id=2001400809]
+offset_left = 41.0
+offset_right = 707.6667
+offset_bottom = 213.33331
 
-[node name="Name" parent="Dialouge/CanvasLayer/NinePatchRect" index="0" unique_id=2001400809]
-offset_left = 55.0
-offset_top = 127.00001
-offset_right = 721.6667
-offset_bottom = 210.33331
-
-[node name="Text" parent="Dialouge/CanvasLayer/NinePatchRect" index="1" unique_id=222685130]
-offset_left = 55.0
-offset_top = 160.0
-offset_right = 1611.6667
-offset_bottom = 540.55554
+[node name="Text" parent="Dialouge/CanvasLayer/NinePatchRect" parent_id_path=PackedInt32Array(2115651826, 1161498009) index="1" unique_id=222685130]
+offset_top = 156.0
+offset_right = 1261.6666
+offset_bottom = 649.3334
 theme_override_font_sizes/normal_font_size = 83
 
 [connection signal="body_entered" from="chat_detection_area" to="." method="_on_chat_detection_area_body_entered"]
