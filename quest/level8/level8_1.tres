@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://df8bde4msufos"]
+
+[ext_resource type="Script" uid="uid://bmoprbw58totu" path="res://quest/quest.gd" id="1_wbabs"]
+
+[resource]
+script = ExtResource("1_wbabs")
+id = "level8-1"
+description = "Investigate room 67"
+metadata/_custom_type_script = "uid://bmoprbw58totu"

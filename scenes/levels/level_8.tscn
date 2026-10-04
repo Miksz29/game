@@ -15,6 +15,9 @@
 [ext_resource type="Texture2D" uid="uid://bxx6xtfn70ym" path="res://assets/images/light/light.png" id="13_v7ucw"]
 [ext_resource type="Script" uid="uid://cqywm2eqm21uo" path="res://scenes/levels/level_8.gd" id="13_vsqe1"]
 [ext_resource type="PackedScene" uid="uid://blu1jvwrosmqx" path="res://dialouges/dialouge.tscn" id="14_kk2ik"]
+[ext_resource type="Script" uid="uid://f4es07rfa7pk" path="res://scenes/levels/level_8_2.gd" id="16_e7lui"]
+[ext_resource type="Script" uid="uid://c3y4xunw01xk7" path="res://quest/questIndicator/level2_1.gd" id="17_acgl5"]
+[ext_resource type="Texture2D" uid="uid://6ll3evnvilbx" path="res://assets/images/Dialouge boxes/UI books & more.png" id="18_61loj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwlxl"]
 texture = ExtResource("1_0kxia")
@@ -10327,7 +10330,7 @@ metadata/_edit_use_anchors_ = true
 
 [node name="Area2D2" type="Area2D" parent="." unique_id=916930865]
 position = Vector2(754, 609)
-script = ExtResource("13_vsqe1")
+script = ExtResource("16_e7lui")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D2" unique_id=391090605]
 position = Vector2(756.375, -235)
@@ -10341,7 +10344,36 @@ offset_bottom = -719.0
 d_file = "res://dialouges/level_8(1).json"
 metadata/_edit_use_anchors_ = true
 
+[node name="FirstIndicator" type="Sprite2D" parent="." unique_id=2013242986]
+position = Vector2(264, 196)
+scale = Vector2(4, 4)
+script = ExtResource("17_acgl5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="FirstIndicator" unique_id=884599691]
+offset_left = 316.0
+offset_top = 28.75
+offset_right = 322.23145
+offset_bottom = 35.777817
+rotation = 1.5707964
+texture = ExtResource("18_61loj")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
+[node name="SecondIndicator" type="Sprite2D" parent="." unique_id=1723178887]
+position = Vector2(264, 196)
+scale = Vector2(4, 4)
+script = ExtResource("17_acgl5")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="SecondIndicator" unique_id=247403223]
+offset_left = 403.0
+offset_top = -26.0
+offset_right = 409.23145
+offset_bottom = -18.972183
+rotation = 1.5707964
+texture = ExtResource("18_61loj")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
 [connection signal="body_entered" from="Area2D" to="Area2D" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D" to="Area2D" method="_on_body_exited"]
 [connection signal="body_entered" from="Area2D2" to="Area2D2" method="_on_body_entered"]
 [connection signal="body_exited" from="Area2D2" to="Area2D2" method="_on_body_exited"]
+[connection signal="dialouge_finished" from="Area2D2/Dialouge" to="Area2D2" method="_on_dialouge_dialouge_finished"]

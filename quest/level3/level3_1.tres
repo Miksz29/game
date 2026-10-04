@@ -5,5 +5,5 @@
 [resource]
 script = ExtResource("1_85cue")
 id = "level3-1"
-description = "Check the patient at room 1"
+description = "Check the patient at room 2"
 metadata/_custom_type_script = "uid://bmoprbw58totu"

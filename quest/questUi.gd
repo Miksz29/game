@@ -22,7 +22,6 @@ func _on_quest_added(quest: Quest):
 func _on_quest_completed(quest: Quest):
 	if (label_1.get_meta("questId")==quest.id):
 		label_1.add_theme_color_override("font_color", Color("#007600"))
-		print("Removing "+quest.id)
 		await get_tree().create_timer(1.5).timeout
 		label_1.text = ""
 		label_1.set_meta("isAvailable",false)
