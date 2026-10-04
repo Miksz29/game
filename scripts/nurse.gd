@@ -20,7 +20,7 @@ func _ready() -> void:
 	
 
 func _process(delta: float) -> void:
-	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting and !quest_to_complete.is_completed:
+	if Input.is_action_just_pressed("chat") and player_in_chat_zone and !is_chatting:
 		$Dialouge.start()
 		is_chatting = true
 
@@ -49,8 +49,8 @@ func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 
 func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 	if body.has_method("player"):
-		player_in_chat_zone = false
-		prompt_label.hide()
+		player_in_chat_zone = true
+		prompt_label.show()
 
 
 func _on_npc_quest_quest_menu_closed() -> void:

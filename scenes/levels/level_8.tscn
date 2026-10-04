@@ -10253,7 +10253,6 @@ tile_map_data = PackedByteArray("AAABAP3/AAAAAAAAAAABAP7/AAAAAAEAAAACAP3/AAABAAA
 tile_set = SubResource("TileSet_3wtmn")
 
 [node name="TileMapLayer3" type="TileMapLayer" parent="." unique_id=56761044]
-visible = false
 scale = Vector2(4, 4)
 tile_map_data = PackedByteArray("AAAfAAIAAwAFAAAAAAAfAAMAAwAFAAEAAAAfAAQAAwAFAAIAAAAfAAUAAwAFAAAAAAAfAAYAAwAFAAEAAAAfAAcAAwAFAAIAAAA=")
 tile_set = SubResource("TileSet_j0hcr")

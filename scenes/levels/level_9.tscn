@@ -7307,6 +7307,7 @@ tile_set = SubResource("TileSet_jbofv")
 position = Vector2(585, 4331)
 
 [node name="Area2D4" type="Area2D" parent="." unique_id=1157534666]
+y_sort_enabled = true
 position = Vector2(2680, 1416)
 script = ExtResource("12_chcbd")
 
@@ -7339,6 +7340,7 @@ text = "Press 'E' to interact
 and Enter to continue"
 
 [node name="Area2D5" type="Area2D" parent="." unique_id=903613490]
+y_sort_enabled = true
 position = Vector2(5360, 2832)
 script = ExtResource("15_3u6br")
 
