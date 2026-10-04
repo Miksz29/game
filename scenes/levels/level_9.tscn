@@ -7257,6 +7257,7 @@ fill = 1
 fill_from = Vector2(0.5, 0.5)
 
 [node name="Node2D" type="Node2D" unique_id=1856569413]
+y_sort_enabled = true
 script = ExtResource("1_1hv7j")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=1901521624]
@@ -7344,7 +7345,7 @@ script = ExtResource("15_3u6br")
 [node name="TileMapLayer8" type="TileMapLayer" parent="Area2D5" unique_id=1645745242]
 position = Vector2(-5360, -2832)
 scale = Vector2(4, 4)
-tile_map_data = PackedByteArray("AAARAAMAAAADAAEAABARAAQAAAADAAIAABAQAAMAAAAEAAEAABAQAAQAAAAEAAIAABA=")
+tile_map_data = PackedByteArray("AAAQAAQAAAAEAAIAABARAAQAAAADAAIAABAQAAMAAAAEAAEAABARAAMAAAADAAEAABA=")
 tile_set = SubResource("TileSet_mg7dd")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="Area2D5" unique_id=476904081]

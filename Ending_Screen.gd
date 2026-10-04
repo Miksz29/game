@@ -1,6 +1,6 @@
 extends Control
 
-const BACKSTORY_JSON = "res://dialouges/level9_backstory.json"
+const BACKSTORY_JSON = "res://dialouges/Ending_Screen.json"  # ← changed path
 
 @onready var label: Label = $Label
 @onready var prompt_label: Label = $PromptLabel
@@ -34,15 +34,13 @@ func _load_lines() -> Array:
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("ui_accept"):
 		if is_typing:
-			# Skip animation, reveal full line instantly
 			label.visible_characters = -1
 			is_typing = false
 			return
 
 		current_index += 1
 		if current_index >= lines.size():
-			SaveManager.start_level = 10
-			get_tree().change_scene_to_file("res://scenes/main.tscn")
+			get_tree().change_scene_to_file("res://scenes/levels/main_menu.tscn")   # ← changed destination
 		else:
 			prompt_label.visible = false
 			await _type_line(lines[current_index]['text'])

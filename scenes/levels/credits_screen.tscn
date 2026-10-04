@@ -1,0 +1,63 @@
+[gd_scene format=3 uid="uid://bpjbkd2r3o3o0"]
+
+[ext_resource type="Script" uid="uid://dwwqiou08xf06" path="res://credits_screen.gd" id="1_vspk7"]
+[ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="2_yqclf"]
+
+[node name="CreditsScreen" type="Control" unique_id=735482835]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_vspk7")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2033702471]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 543.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1114229554]
+layout_mode = 0
+offset_left = 166.0
+offset_top = 72.0
+offset_right = 902.0
+offset_bottom = 447.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqclf")
+theme_override_font_sizes/font_size = 32
+text = "leader: JOHN MIKKO C. ROSITO
+
+PROGRAMMERS: JAN BERNARD ABAINCIA,
+GLENN MICHAEL ORLANES
+
+ARTISTS: TEA FRANCHESA REESE BASNILIO,
+JEOF XYLE ALIPIO
+
+STORYWRITER/BOARDER: MARY LAIZELLE DALMERO
+
+THIS WAS OUR FIRST EVER GAMEJAM AS A TEAM WE TRULY 
+HOPE YOU ENJOYED OUR SHORT HORROR GAME!
+ 								
+"
+
+[node name="Label2" type="Label" parent="." unique_id=1514475074]
+layout_mode = 0
+offset_left = 302.0
+offset_top = 431.0
+offset_right = 618.0
+offset_bottom = 460.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqclf")
+theme_override_font_sizes/font_size = 32
+text = "THANK YOU FOR PLAYING!!"
+
+[node name="PromptLabel" type="Label" parent="." unique_id=1851579769]
+layout_mode = 0
+offset_left = 289.0
+offset_top = 462.0
+offset_right = 775.0
+offset_bottom = 549.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_yqclf")
+theme_override_font_sizes/font_size = 32
+text = "Press space to continue"

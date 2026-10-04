@@ -6,6 +6,7 @@ signal apple_collected
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var quest_to_complete: Quest = preload("res://quest/level1/level1_1.tres")
 @onready var prompt_label = $Label
+@export var is_ending_trigger: bool = false
 
 const SPEED = 300.0
 var player_in_chat_zone = false
@@ -33,8 +34,11 @@ func _process(delta: float) -> void:
 
 func _on_dialouge_dialouge_finished() -> void:
 	is_chatting = false
-	QuestManager.complete_quest(quest_to_complete.id)
-	prompt_label.hide()
+	if is_ending_trigger:
+		get_tree().change_scene_to_file("res://scenes/levels/Ending_screen.tscn")
+		return
+	if quest_to_complete.id != null:
+		QuestManager.complete_quest(quest_to_complete.id)
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):
@@ -51,3 +55,5 @@ func _on_chat_detection_area_body_exited(body: Node2D) -> void:
 
 func _on_npc_quest_quest_menu_closed() -> void:
 	is_chatting = false
+	
+	
