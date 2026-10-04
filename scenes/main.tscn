@@ -15,6 +15,7 @@ var level2_played: bool = false
 const DIALOGUE_SCENE = preload(\"res://dialouges/dialouge.tscn\")
 const INTRO_JSON = \"res://dialouges/player_monologue_level1.json\"
 const LEVEL2_JSON = \"res://dialouges/player_monologue_level2.json\"
+const FLASH_SCENE = preload(\"res://scenes/flash_screen.tscn\")
  
  
 func _ready() -> void:
@@ -45,8 +46,19 @@ func _load_level(level_number: int, transition_type: String) -> void:
 			if camera:
 				camera.reset_smoothing()
 				camera.make_current()
+		
+		var night_light = player.get_node_or_null(\"NightLight\")
+		if night_light:
+			night_light.enabled = (level_number == 9)
 
 	_setup_level(current_level_root)
+	
+	# Music: stop on level 9, keep/resume everywhere else
+	if level_number == 9:
+		Bgm.stop()
+		QuestUi.hide()
+	elif not Bgm.playing:
+		Bgm.play()
 	
 	# Monologues
 	if level_number == 1 and SaveManager.play_intro:
@@ -55,6 +67,8 @@ func _load_level(level_number: int, transition_type: String) -> void:
 	elif level_number == 2 and transition_type == \"forward\" and not is_initial_load and not level2_played:
 		level2_played = true
 		_play_monologue.call_deferred(LEVEL2_JSON)
+	elif level_number == 9 and transition_type == \"forward\" and not is_initial_load:
+		_play_flash.call_deferred()
  
 func _play_monologue(json_path: String) -> void:
 	var dialogue = DIALOGUE_SCENE.instantiate()
@@ -73,6 +87,11 @@ func _monologue_quest(finished_json: String) -> void:
 		LEVEL2_JSON:
 			var quest = load(\"res://quest/level2/level2_1.tres\")
 			QuestManager.add_quest(quest)
+
+func _play_flash() -> void:
+	QuestUi.hide()
+	var flash = FLASH_SCENE.instantiate()
+	add_child(flash)
 			
 func _setup_level(level_root: Node) -> void:
 	var exit = level_root.get_node_or_null(\"Exit\")
@@ -94,7 +113,6 @@ func _on_exit_back_body_entered(body: Node2D) -> void:
 		level -= 1
 		last_transition = \"back\"
 		call_deferred(\"_load_level\", level, last_transition)
- 
 "
 
 [node name="Main" type="Node2D" unique_id=436067041]

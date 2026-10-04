@@ -3829,6 +3829,15 @@ size = Vector2(141.75, 149.5)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ymk4h"]
 size = Vector2(296.875, 19.75)
 
+[sub_resource type="Gradient" id="Gradient_dfn7m"]
+offsets = PackedFloat32Array(0, 0.6566265, 0.9879518, 1)
+colors = PackedColorArray(0.8, 0.8, 0.8, 1, 0, 0, 0, 1, 0.048854947, 0.048854947, 0.048854947, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_8rm7r"]
+gradient = SubResource("Gradient_dfn7m")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Node2D" type="Node2D" unique_id=1856569413]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=877884737]
@@ -3941,3 +3950,14 @@ offset_bottom = 487.551
 rotation = -1.5707964
 texture = ExtResource("14_8rm7r")
 region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1477519853]
+position = Vector2(927, 529.00006)
+scale = Vector2(19.353714, 17.081429)
+color = Color(0.96862745, 0.80784315, 0.7176471, 1)
+energy = 0.85
+texture = SubResource("GradientTexture2D_8rm7r")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1371037088]
+position = Vector2(-195, -235)
+color = Color(0.4817897, 0.4817894, 0.48178947, 1)

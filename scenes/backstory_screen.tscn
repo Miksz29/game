@@ -1,0 +1,39 @@
+[gd_scene format=3 uid="uid://b17gq8ab4rce6"]
+
+[ext_resource type="Script" uid="uid://chn5aoewfocvs" path="res://scenes/backstory_screen.gd" id="1_4ub71"]
+[ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="2_iiqq3"]
+
+[node name="BackstoryScreen" type="Control" unique_id=735482835]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_4ub71")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2033702471]
+layout_mode = 0
+offset_right = 960.0
+offset_bottom = 543.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=1114229554]
+layout_mode = 0
+offset_left = 311.0
+offset_top = 235.0
+offset_right = 885.0
+offset_bottom = 322.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_iiqq3")
+theme_override_font_sizes/font_size = 32
+text = "A"
+
+[node name="PromptLabel" type="Label" parent="." unique_id=1851579769]
+layout_mode = 0
+offset_left = 291.0
+offset_top = 433.0
+offset_right = 777.0
+offset_bottom = 520.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_iiqq3")
+theme_override_font_sizes/font_size = 32
+text = "Press space to continue"
