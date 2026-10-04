@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://mxyhde3qqum1"]
+
+[ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="1_lmcoa"]
+[ext_resource type="Script" uid="uid://bocqbws3kj82e" path="res://scenes/flash_screen.gd" id="1_yjhgu"]
+
+[node name="FlashScreen" type="CanvasLayer" unique_id=1781555465]
+script = ExtResource("1_yjhgu")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=236095866]
+offset_right = 959.0
+offset_bottom = 538.0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="." unique_id=636857766]
+offset_left = 154.0
+offset_top = 252.0
+offset_right = 782.0
+offset_bottom = 339.0
+theme_override_colors/font_color = Color(1, 0, 0, 1)
+theme_override_fonts/font = ExtResource("1_lmcoa")
+theme_override_font_sizes/font_size = 32
+text = "”ze…tr.ns..red to…ni..t..dut…keep….er…afe.”"

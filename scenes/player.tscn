@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://bqmjd24cw3de5" path="res://assets/images/player/Player/FMC_sprite (12).png" id="15_pf23h"]
 [ext_resource type="Texture2D" uid="uid://ckx817ojnqj64" path="res://assets/images/player/Player/FMC_sprite (13).png" id="16_dt7fs"]
 [ext_resource type="Texture2D" uid="uid://b3a7iirbcv7hv" path="res://assets/images/player/Player/FMC_sprite (14).png" id="17_wqfne"]
+[ext_resource type="Texture2D" uid="uid://bxx6xtfn70ym" path="res://assets/images/light/light.png" id="18_fulsm"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -152,3 +153,9 @@ limit_top = -99
 limit_right = 2377
 limit_bottom = 6350
 rotation_smoothing_enabled = true
+
+[node name="NightLight" type="PointLight2D" parent="." unique_id=288340241]
+enabled = false
+energy = 0.5
+texture = ExtResource("18_fulsm")
+texture_scale = 0.6

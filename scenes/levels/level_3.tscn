@@ -5083,6 +5083,15 @@ size = Vector2(60, 97.875)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n6eey"]
 size = Vector2(855.75, 19.75)
 
+[sub_resource type="Gradient" id="Gradient_lgrx1"]
+offsets = PackedFloat32Array(0, 0.6566265, 0.9879518, 1)
+colors = PackedColorArray(0.8, 0.8, 0.8, 1, 0, 0, 0, 1, 0.048854947, 0.048854947, 0.048854947, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_fhpes"]
+gradient = SubResource("Gradient_lgrx1")
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+
 [node name="Level_Root" type="Node2D" unique_id=211247896]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="." unique_id=2135594064]
@@ -5226,6 +5235,17 @@ offset_bottom = 778.0
 rotation = 1.5707964
 texture = ExtResource("15_lgrx1")
 region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
+[node name="PointLight2D" type="PointLight2D" parent="." unique_id=1614533869]
+position = Vector2(839, 421)
+scale = Vector2(17.728714, 15.628304)
+color = Color(0.96862745, 0.80784315, 0.7176471, 1)
+energy = 0.85
+texture = SubResource("GradientTexture2D_fhpes")
+
+[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=1125650535]
+position = Vector2(-372, -293)
+color = Color(0.4817897, 0.4817894, 0.48178947, 1)
 
 [connection signal="body_entered" from="Medicine Cabinet" to="Medicine Cabinet" method="_on_body_entered"]
 [connection signal="body_exited" from="Medicine Cabinet" to="Medicine Cabinet" method="_on_body_exited"]
