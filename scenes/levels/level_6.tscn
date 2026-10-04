@@ -12,6 +12,8 @@
 [ext_resource type="Texture2D" uid="uid://7uwi58xy4mew" path="res://assets/images/tileset/AO ONI 2.png" id="10_bvftm"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="11_4fymt"]
 [ext_resource type="Texture2D" uid="uid://bxx6xtfn70ym" path="res://assets/images/light/light.png" id="13_4wfvb"]
+[ext_resource type="Script" uid="uid://c3y4xunw01xk7" path="res://quest/questIndicator/level2_1.gd" id="13_tqv5a"]
+[ext_resource type="Texture2D" uid="uid://6ll3evnvilbx" path="res://assets/images/Dialouge boxes/UI books & more.png" id="14_ppjov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uwlxl"]
 texture = ExtResource("1_kydov")
@@ -10063,3 +10065,17 @@ texture_scale = 0.6
 
 [node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=467729022]
 color = Color(0.24115604, 0.24115604, 0.24115604, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=400826337]
+position = Vector2(264, 196)
+scale = Vector2(4, 4)
+script = ExtResource("13_tqv5a")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D" unique_id=371890683]
+offset_left = 195.25
+offset_top = -28.25
+offset_right = 201.48146
+offset_bottom = -21.222183
+rotation = 1.5707964
+texture = ExtResource("14_ppjov")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)

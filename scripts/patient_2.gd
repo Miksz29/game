@@ -5,7 +5,6 @@ signal apple_collected
 
 @onready var animated_sprite_2d: AnimatedSprite2D = $AnimatedSprite2D
 @onready var quest_to_complete: Quest = preload("res://quest/level5/level5_1.tres")
-@onready var quest_to_complete2: Quest = preload("res://quest/level7/level7_1.tres")
 @onready var prompt_label = $Label
 
 const SPEED = 300.0
@@ -36,7 +35,7 @@ func _process(delta: float) -> void:
 func _on_dialouge_dialouge_finished() -> void:
 	is_chatting = false
 	QuestManager.complete_quest(quest_to_complete.id)
-	QuestManager.add_quest(quest_to_complete2)
+	prompt_label.hide()
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

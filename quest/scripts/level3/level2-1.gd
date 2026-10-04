@@ -26,3 +26,4 @@ func _unhandled_input(event: InputEvent) -> void:
 	if is_player_inside and event.is_action_pressed("quest") and !quest_to_complete.is_completed:
 		QuestManager.complete_quest(quest_to_complete.id)
 		QuestManager.add_quest(quest_to_complete2)
+		prompt_label.hide()

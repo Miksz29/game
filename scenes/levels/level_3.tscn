@@ -13,6 +13,10 @@
 [ext_resource type="Script" uid="uid://b45hh3ptu06f1" path="res://scripts/level barrier/level3.gd" id="10_2bnyt"]
 [ext_resource type="Script" uid="uid://dtsmwppwotmlo" path="res://scripts/lola_lily.gd" id="10_f6egh"]
 [ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="11_qi5uv"]
+[ext_resource type="Script" uid="uid://drav7x4v4sf5l" path="res://quest/questIndicator/sprite3_1.gd" id="14_josfm"]
+[ext_resource type="Texture2D" uid="uid://6ll3evnvilbx" path="res://assets/images/Dialouge boxes/UI books & more.png" id="15_lgrx1"]
+[ext_resource type="Script" uid="uid://b66hk2tbvydim" path="res://quest/questIndicator/sprite3_2.gd" id="16_fhpes"]
+[ext_resource type="Script" uid="uid://di78xvduntx7w" path="res://quest/questIndicator/level3_next_level.gd" id="17_lgrx1"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_fkk1g"]
 texture = ExtResource("1_3kf05")
@@ -5186,6 +5190,42 @@ position = Vector2(1626.75, 642)
 position = Vector2(-779.75, 89)
 shape = SubResource("RectangleShape2D_n6eey")
 script = ExtResource("10_2bnyt")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=123039341]
+script = ExtResource("14_josfm")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D" unique_id=1012464791]
+offset_left = 770.0
+offset_top = 84.0
+offset_right = 794.0
+offset_bottom = 110.0
+rotation = 1.5707964
+texture = ExtResource("15_lgrx1")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=20170041]
+script = ExtResource("16_fhpes")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D2" unique_id=1903737168]
+offset_left = 1199.0
+offset_top = 304.0
+offset_right = 1223.0
+offset_bottom = 330.0
+rotation = 1.5707964
+texture = ExtResource("15_lgrx1")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
+[node name="Sprite2D3" type="Sprite2D" parent="." unique_id=843973151]
+script = ExtResource("17_lgrx1")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D3" unique_id=1823892933]
+offset_left = 593.0
+offset_top = 752.0
+offset_right = 617.0
+offset_bottom = 778.0
+rotation = 1.5707964
+texture = ExtResource("15_lgrx1")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
 
 [connection signal="body_entered" from="Medicine Cabinet" to="Medicine Cabinet" method="_on_body_entered"]
 [connection signal="body_exited" from="Medicine Cabinet" to="Medicine Cabinet" method="_on_body_exited"]

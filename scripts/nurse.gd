@@ -34,6 +34,7 @@ func _process(delta: float) -> void:
 func _on_dialouge_dialouge_finished() -> void:
 	is_chatting = false
 	QuestManager.complete_quest(quest_to_complete.id)
+	prompt_label.hide()
 
 func _on_chat_detection_area_body_entered(body: Node2D) -> void:
 	if body.has_method("player"):

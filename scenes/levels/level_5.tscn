@@ -13,6 +13,9 @@
 [ext_resource type="FontFile" uid="uid://bcik53bh70xxp" path="res://NESCyrillic.ttf" id="11_5ke18"]
 [ext_resource type="PackedScene" uid="uid://b15tgnborxqam" path="res://scenes/player.tscn" id="11_vm1kt"]
 [ext_resource type="Script" uid="uid://cch2ib77mg558" path="res://scripts/level barrier/level5.gd" id="13_5ke18"]
+[ext_resource type="Script" uid="uid://diqwik4l5ebto" path="res://quest/questIndicator/sprite5_1.gd" id="14_gruok"]
+[ext_resource type="Texture2D" uid="uid://6ll3evnvilbx" path="res://assets/images/Dialouge boxes/UI books & more.png" id="15_h717f"]
+[ext_resource type="Script" uid="uid://bwu4onw17b8bi" path="res://quest/questIndicator/level5_next_level.gd" id="16_l8eod"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mxx4w"]
 texture = ExtResource("3_5ke18")
@@ -3876,10 +3879,10 @@ script = ExtResource("10_6xwso")
 quest_resource = null
 
 [node name="Label" type="Label" parent="patient_1" unique_id=594328107]
-offset_left = -40.400345
-offset_top = 63.485184
-offset_right = 79.599655
-offset_bottom = 84.48518
+offset_left = -12.018758
+offset_top = 136.43953
+offset_right = 107.98124
+offset_bottom = 157.43953
 rotation = -1.5707964
 theme_override_fonts/font = ExtResource("11_5ke18")
 theme_override_font_sizes/font_size = 11
@@ -3894,7 +3897,7 @@ scale = Vector2(1.8654438, 1.8926667)
 position = Vector2(96, 101)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Exit" unique_id=477679662]
-position = Vector2(482, 977)
+position = Vector2(481, 847)
 shape = SubResource("RectangleShape2D_eqjcn")
 
 [node name="Exit_back" type="Area2D" parent="." unique_id=647065369]
@@ -3911,3 +3914,31 @@ position = Vector2(1626.75, 642)
 position = Vector2(-1045.75, 211)
 shape = SubResource("RectangleShape2D_j14br")
 script = ExtResource("13_5ke18")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=1649386518]
+position = Vector2(1108, 455.00003)
+rotation = 1.5659359
+scale = Vector2(1.7724292, 1.9635046)
+script = ExtResource("14_gruok")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D" unique_id=964897088]
+offset_left = -32.701134
+offset_top = -4.21788
+offset_right = -16.5765
+offset_bottom = 11.609512
+texture = ExtResource("15_h717f")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
+
+[node name="Sprite2D2" type="Sprite2D" parent="." unique_id=860272306]
+position = Vector2(1108, 455.00003)
+rotation = 1.5659359
+scale = Vector2(1.7724292, 1.9635046)
+script = ExtResource("16_l8eod")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="Sprite2D2" unique_id=1559387230]
+offset_left = 227.66284
+offset_top = 264.90396
+offset_right = 244.17847
+offset_bottom = 281.77316
+texture = ExtResource("15_h717f")
+region_rect = Rect2(465.8764, 353.88174, 12.128143, 12.967194)
