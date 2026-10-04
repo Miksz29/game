@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Quest" format=3 uid="uid://dj4rbue5qrsvl"]
+
+[ext_resource type="Script" uid="uid://bmoprbw58totu" path="res://quest/quest.gd" id="1_c7p56"]
+
+[resource]
+script = ExtResource("1_c7p56")
+id = "level9-2"
+description = "Check the note"
+metadata/_custom_type_script = "uid://bmoprbw58totu"
