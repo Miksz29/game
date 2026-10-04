@@ -8402,10 +8402,7 @@ scale = Vector2(1.6, 1.6)
 slide_on_ceiling = false
 is_ending_trigger = true
 
-[node name="Dialouge" parent="nurse" index="3" unique_id=2115651826]
-d_file = "res://dialouges/nurse_level10_dialouge.json"
-
-[node name="Label" type="Label" parent="nurse" index="4" unique_id=1900871226]
+[node name="Label" type="Label" parent="nurse" index="0" unique_id=1900871226]
 offset_left = -97.5
 offset_top = 37.5
 offset_right = 164.5
@@ -8415,6 +8412,9 @@ theme_override_font_sizes/font_size = 16
 text = "Press 'E' to interact and
 press Enter to continue"
 metadata/_edit_use_anchors_ = true
+
+[node name="Dialouge" parent="nurse" index="4" unique_id=2115651826]
+d_file = "res://dialouges/nurse_level10_dialouge.json"
 
 [node name="npc2" parent="." index="4" unique_id=143268733 instance=ExtResource("13_657iy")]
 position = Vector2(899, 872)
