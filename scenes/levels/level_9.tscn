@@ -7443,7 +7443,6 @@ d_file = "res://dialouges/level_9(6).json"
 metadata/_edit_use_anchors_ = true
 
 [node name="Area2D7" type="Area2D" parent="." unique_id=681616501]
-visible = false
 position = Vector2(670, 354.00003)
 script = ExtResource("18_0vi5c")
 
